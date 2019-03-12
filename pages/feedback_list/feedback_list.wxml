@@ -1,0 +1,34 @@
+<!--pages/feedback_list/feedback_list.wxml-->
+<import src="/pages/template/template.wxml" />
+<template wx:if="{{onlineTier}}" is="{{onlineData.line_type == 1 ? 'onLineTierText' : 'onLineTierPic'}}" data="{{onlineData}}">
+</template>
+<view class='conter'>
+  <view class='list-info'>
+    <view class='list-item' wx:for="{{listArr}}" wx:key="{{index}}" >
+      <view class='title'>
+        <view class='left'>
+          <view class='tit'>
+            {{item.back_type_name}}
+          </view>
+          <text class="status {{item.styleName}}">{{item.status}}</text>
+        </view>
+        <view class='time'>{{item.create_time}}</view>
+      </view>
+      <view class='word-cont'>
+        {{item.added}}
+      </view>
+      <scroll-view class='img-cont' scroll-x="true" style='width:100%'>
+        <image wx:if="{{item.images.length>0}}" wx:for="{{item.images}}" wx:key="{{index}}" class='img' wx:for-item="itemImg" src='{{itemImg}}'></image>
+      </scroll-view>
+      <view wx:if="{{item.reply}}" class='back-cont'>
+       <view class='title-top'>
+        <text class='text'>反馈意见</text>
+        <text class='time'>{{item.process_time}}</text>
+       </view>
+       <view class='main'>
+        {{item.reply}}
+       </view>
+      </view>
+    </view>
+  </view>
+</view>

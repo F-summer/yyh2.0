@@ -1,0 +1,86 @@
+/* pages/community/community.wxss */
+
+.content {
+  background: #0f59da;
+  padding-bottom: 64rpx;
+}
+
+.banner {
+  width: 100%;
+  height: 300rpx;
+  margin-bottom: 50rpx;
+}
+
+.box-info {
+  padding: 0 32rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.item {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 16rpx;
+}
+
+.item .text {
+  color: #fff;
+  position: absolute;
+  z-index: 9999;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 36rpx;
+  font-size: 30rpx;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  display: -webkit-box;
+  display: box;
+  box-sizing: content-box;
+}
+
+.item .num {
+  position: absolute;
+  font-size: 92rpx;
+  color: #0b5ce4;
+  bottom: -38rpx;
+  right: 44rpx;
+}
+
+.item1 {
+  background-image: linear-gradient(180deg, #1f7fff 0%, #0d62f6 100%), linear-gradient(#000, #000);
+  background-blend-mode: normal, normal;
+  border-radius: 16rpx;
+}
+
+.item2 {
+  background-image: linear-gradient(180deg, #ffc434 0%, #ffa600 100%), linear-gradient(#000, #000);
+  background-blend-mode: normal, normal;
+  border-radius: 16rpx;
+}
+
+.item3 {
+  background-image: linear-gradient(180deg, #fd653c 0%, #f45044 100%), linear-gradient(#000, #000);
+  background-blend-mode: normal, normal;
+  border-radius: 16rpx;
+}
+
+.item4 {
+  background-image: linear-gradient(180deg, #b12dff 0%, #9d10fd 100%), linear-gradient(#000, #000);
+  background-blend-mode: normal, normal;
+  border-radius: 16rpx;
+}
+
+.item5 {
+  background-image: -moz-linear-gradient(-90deg, rgb(33, 191, 255) 0%, rgb(0, 167, 239) 100%);
+  background-image: -webkit-linear-gradient(-90deg, rgb(33, 191, 255) 0%, rgb(0, 167, 239) 100%);
+  background-image: -ms-linear-gradient(-90deg, rgb(33, 191, 255) 0%, rgb(0, 167, 239) 100%);
+  background-blend-mode: normal, normal;
+  border-radius: 16rpx;
+}
+
+.item6 {
+  background-image: linear-gradient(180deg, #607aab 0%, #51689a 100%), linear-gradient(#000, #000);
+  background-blend-mode: normal, normal;
+  border-radius: 16rpx;
+}

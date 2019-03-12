@@ -1,0 +1,13 @@
+<!--pages/loginPage/loginPage.wxml-->
+<import src="/pages/template/template.wxml" />
+<template wx:if="{{onlineTier}}" is="{{onlineData.line_type == 1 ? 'onLineTierText' : 'onLineTierPic'}}" data="{{onlineData}}">
+</template>
+<view class='content'>
+
+  <image class='top' src='https://www.yaobc.info/images/yyh/11.png'></image>
+ <image class='desc' src='https://www.yaobc.info/images/yyh/13.png'></image>
+  <button class='btn' open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">
+    获取你的公开信息(昵称、头像等)
+  </button>
+ <image class='logo' src='https://www.yaobc.info/images/yyh/12.png'></image>
+</view>

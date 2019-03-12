@@ -1,0 +1,139 @@
+<!--pages/vote/vote.wxml-->
+<import src="/pages/template/template.wxml" />
+<template wx:if="{{onlineTier}}" is="{{onlineData.line_type == 1 ? 'onLineTierText' : 'onLineTierPic'}}" data="{{onlineData}}">
+</template>
+<view class='content'>
+  <!-- <view class='search'>
+    <view class='search-cont'>
+      <image class='icon' src='/images/icon_search.png'></image>
+      <input bindblur='blurFun' value="{{textInput}}" class='input-cont' placeholder='搜索您要支持的企业名称'></input>
+    </view>
+    <image bindtap='clearFun' wx:if="{{showClear}}" class='cancel' src="/images/clear.png"></image>
+  </view> -->
+  <view class='banner'>
+    <image class='banner-img' src='https://www.yaobc.info/images/yyh/banner.png'></image>
+    <text class='text-time'>{{timeText}}</text>
+  </view>
+  <view class='list-info'>
+    <view class='list-top'>
+      <image class='bg' src='/images/bg.png'></image>
+      <view class='box' bindtap='showAltFun'>规则</view>
+    </view>
+    <view class='list-cont'>
+      <view wx:if="{{noSearch}}" wx:for="{{listArr}}" wx:key="{{index}}" class='list-item'>
+        <view class='left'>
+          <view class='msg'>
+            <view class='logo-img'>
+              <image class='logo' src='{{item.logo}}'></image>
+              <view class='icon-box'>
+                <image class='icon' wx:if="{{item.kingNum==0}}" src='/images/1.png'></image>
+                <image class='icon' wx:if="{{item.kingNum==1}}" src='/images/2.png'></image>
+                <image class='icon' wx:if="{{item.kingNum==2}}" src='/images/3.png'></image>
+
+              </view>
+              <text wx:if="{{item.kingNum>=3}}" class='numm'>{{item.kingNum+1}}</text>
+            </view>
+            <view class='msg-item'>
+              <text class='name'>{{item.name}}</text>
+              <view class='num'>
+                <text class='text'>票数：</text>
+                <text class='num-text'>{{item.number}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class='right-cont'>
+          <view class='right' data-id="{{item.id}}">
+            <form wx:if="{{item.showBtnFun}}" bindsubmit="zhichiFun" report-submit="true" data-type="nomore" data-img="{{item.logo}}" data-id="{{item.id}}" class='text'>
+              <button formType="submit" class='text-btn'>支持</button>
+            </form>
+            <text wx:else class='text active' data-img="{{item.logo}}" data-id="{{item.id}}">支持</text>
+          </view>
+          <view bindtap='shearFun' data-num="{{item.number}}" class='shear-btn' data-id="{{item.id}}" data-name="{{item.name}}">助力</view>
+        </view>
+      </view>
+      <view wx:if="{{!noSearch}}" wx:for="{{searchArr}}" wx:key="{{index}}" class='list-item'>
+        <view class='left'>
+          <view class='msg'>
+            <view class='logo-img'>
+              <image class='logo' src='{{item.logo}}'></image>
+              <view class='icon-box'>
+                <image class='icon' wx:if="{{item.kingNum==0}}" src='/images/1.png'></image>
+                <image class='icon' wx:if="{{item.kingNum==1}}" src='/images/2.png'></image>
+                <image class='icon' wx:if="{{item.kingNum==2}}" src='/images/3.png'></image>
+
+              </view>
+              <text wx:if="{{item.kingNum>=3}}" class='numm'>{{item.kingNum+1}}</text>
+            </view>
+            <view class='msg-item'>
+              <text class='name'>{{item.name}}</text>
+              <view class='num'>
+                <text class='text'>票数：</text>
+                <text class='num-text'>{{item.number}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class='right-cont'>
+          <view class='right' data-id="{{item.id}}">
+            <form wx:if="{{item.showBtnFun}}" bindsubmit="zhichiFun" report-submit="true" data-type="search" data-img="{{item.logo}}" data-id="{{item.id}}" class='text'>
+              <button formType="submit" class='text-btn'>支持</button>
+            </form>
+            <text wx:else class='text active' data-img="{{item.logo}}" data-id="{{item.id}}">支持</text>
+          </view>
+          <view bindtap='shearFun' data-num="{{item.number}}" class='shear-btn' data-id="{{item.id}}" data-name="{{item.name}}">助力</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <text class='more'>指导单位：中国医药商业协会、中国化学制药工业行业协会、中国中药协会</text>
+  <text class='more'>主办单位：国药励展、赛柏蓝</text>
+  <view class='fixed-cont' wx:if="{{showBtnShear}}">
+    <!-- <image class='bgimg' src='/images/bg1.png'></image> -->
+    <view class='fixed-info'>
+      <view class='fixed-item' bindtap='shearFun'>
+        <image class='icon' src='/images/icon2.png'></image>
+        <text class="text">分享</text>
+      </view>
+      <view class='fixed-item' bindtap='backIndexFun'>
+        <image class='icon' src='/images/icon1.png'></image>
+        <text class="text">首页</text>
+      </view>
+    </view>
+    <!-- <image wx:if="{{showBack}}" bindtap='backIndexFun' class='back' src='/images/backindex.png'></image> -->
+  </view>
+  <view catchtouchmove="preventTouchMove" class='rule' wx:if="{{showAlt}}">
+    <view class='alt'>
+      <text class='title'>投票活动规则</text>
+      <scroll-view class='text-cont-msg' scroll-y style='height:640rpx'>
+        <view class='text-cont' wx:for="{{rule}}" wx:key="{{key}}">
+          {{item}}
+        </view>
+      </scroll-view>
+      <view class='btn-cont'>
+        <text class='text' bindtap='hideAlt'>我知道了</text>
+        <button wx:if="{{showLogin}}" class='lgoinbtn' open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">
+          登录授权
+        </button>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{showVote}}" class='vote-cont-bot'>
+    <view class='vote-list'>
+      <view class='vote-item' wx:for="{{voteListArr}}" wx:key="{{index}}">
+        <image src='{{item.logo}}' class='vote-logo'></image>
+        <image bindtap='deletedFun' data-id="{{item.id}}" class='deleted' src='/images/deleted.png'></image>
+      </view>
+    </view>
+    <view class='vote-ben-cont'>
+      <view wx:if="{{voteListArr.length<minPiao}}" class='vote-btn-text active'>
+        我要投票，剩余{{piao}}票
+      </view>
+      <view wx:else class='vote-btn-text' bindtap='voteFun'>
+        提交投票结果
+      </view>
+      <button wx:if="{{showPhonebtn&&voteListArr.length>minPiao-1}}" class='details_button' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" plain></button>
+    </view>
+  </view>
+  <canvasEle id="canvasEle"></canvasEle>
+</view>

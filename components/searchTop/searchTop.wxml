@@ -1,0 +1,19 @@
+<!--components/searchTop/searchTop.wxml-->
+<view class='content'>
+  <view class='search-cont'>
+    <!-- <view bindtap='goSelectPag' data-index="0" class='left'>
+      <text class='city'>{{cityName.name}}</text>
+      <image class='icon' src='/images/select_icon.png'></image>
+    </view> -->
+     <view class='search-box right' url='/pages/searchPage/searchPage' hover-class='none'>
+      <image bindtap='goSearch' class='icon' src='/images/icon_search.png'></image>
+      <form wx:for="{{arr}}" wx:key="{{index}}" bindsubmit='searchFun' data-id="0"  data-name="{{item.name}}" report-submit="true" data-type="1349">
+        <button class="text" formType="submit">
+          {{item.newname}}  <text class="text">|</text>
+        </button>
+      </form>
+      <text class="text" bindtap='goSearch'>…</text>
+      <!-- <text class='text'>搜索您感兴趣的群</text> -->
+    </view>
+  </view>
+</view>

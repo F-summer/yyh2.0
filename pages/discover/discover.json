@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "g-theme": "/components/theme/theme",
+    "g-city": "/components/city/city",
+    "g-province":"/components/province/province"
+  }
+}

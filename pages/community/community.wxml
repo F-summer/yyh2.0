@@ -1,0 +1,74 @@
+<!--pages/community/community.wxml-->
+<view class='content'>
+  <image class='banner' src='https://www.yaobc.info/images/yyh/yyhtoybc.png'></image>
+  <view class='box-info'>
+    <view bindtap='goCommunity' class='item item1' data-id="{{arrData[0].id}}" style='width: 406rpx;height: 154rpx;margin-right: 16rpx;'>
+      <text class='text' style='margin:45rpx 30rpx;-webkit-line-clamp: 2;line-clamp: 2;'>{{arrData[0].title}}</text>
+      <text class='num' style='color:#0b5ce4'>{{arrData[0].total}}</text>
+    </view>
+    <view bindtap='goCommunity' class='item item2' data-id="{{arrData[1].id}}" style='width: 264rpx;height: 154rpx;'>
+      <text class='text' style='margin:26rpx 30rpx;-webkit-line-clamp: 3;line-clamp: 3;'>{{arrData[1].title}}</text>
+      <text class='num' style='color:#fe9500'>{{arrData[1].total}}</text>
+    </view>
+    <view class='itembox'>
+      <view bindtap='goCommunity' class='item item3' data-id="{{arrData[2].id}}" style='width: 335rpx;height: 120rpx;margin-right: 16rpx;'>
+        <text class='text' style='margin:28rpx 30rpx;-webkit-line-clamp: 2;line-clamp: 2;'>{{arrData[2].title}}</text>
+        <text class='num' style='color:#f34038'>{{arrData[2].total}}</text>
+      </view>
+      <view bindtap='goCommunity' class='item item5' data-id="{{arrData[3].id}}" style='width: 335rpx;height: 194rpx;'>
+        <text class='text' style='margin:45rpx 30rpx;-webkit-line-clamp: 3;line-clamp: 3;'>{{arrData[3].title}}</text>
+        <text class='num' style='color:#049de0;'>{{arrData[3].total}}</text>
+      </view>
+    </view>
+    <view class='itembox'>
+      <view bindtap='goCommunity' class='item item4' data-id="{{arrData[4].id}}" style='width: 335rpx;height: 190rpx;'>
+        <text class='text' style='margin:45rpx 30rpx;-webkit-line-clamp: 3;line-clamp: 3;'>{{arrData[4].title}}</text>
+        <text class='num' style='color:#9222de;'>{{arrData[4].total}}</text>
+      </view>
+      <view bindtap='goCommunity' class='item item6' data-id="{{arrData[5].id}}" style='width: 335rpx;height: 121rpx;'>
+        <text class='text' style='margin:26rpx 30rpx;-webkit-line-clamp: 2;line-clamp: 2;'>{{arrData[5].title}}</text>
+        <text class='num' style='color:#435d96;'>{{arrData[5].total}}</text>
+      </view>
+    </view>
+    <view bindtap='goCommunity' class='item item2' data-id="{{arrData[6].id}}" style='width: 686rpx;height: 121rpx;margin-top:48rpx'>
+      <text class='text' style='margin:47rpx 30rpx;-webkit-line-clamp: 1;line-clamp: 1;'>{{arrData[6].title}}</text>
+      <text class='num' style='color:#fe9500;'>{{arrData[6].total}}</text>
+    </view>
+    <view bindtap='goCommunity' class='item item4' data-id="{{arrData[7].id}}" style='width: 260rpx;height: 121rpx;margin-right:16rpx;'>
+      <text class='text' style='margin:29rpx 30rpx;-webkit-line-clamp: 2;line-clamp: 2;'>{{arrData[7].title}}</text>
+      <text class='num' style='color:#9222de;'>{{arrData[7].total}}</text>
+    </view>
+    <view bindtap='goCommunity' class='item item6' data-id="{{arrData[8].id}}" style='width: 410rpx;height: 121rpx;'>
+      <text class='text' style='margin:26rpx 30rpx;-webkit-line-clamp: 2;line-clamp: 2;'>{{arrData[8].title}}</text>
+      <text class='num' style='color:#435d96;'>{{arrData[8].total}}</text>
+    </view>
+    <view class='itembox' style='margin-right: 16rpx;'>
+      <view bindtap='goCommunity' class='item item2' data-id="{{arrData[9].id}}" style='width:302rpx;height: 121rpx;'>
+        <text class='text' style='margin:29rpx 30rpx;-webkit-line-clamp: 2;line-clamp: 2;'>{{arrData[9].title}}</text>
+        <text class='num' style='color:#fe9500;'>{{arrData[9].total}}</text>
+      </view>
+      <view bindtap='goCommunity' class='item item3' data-id="{{arrData[10].id}}" style='width:302rpx;height: 190rpx;'>
+        <text class='text' style='margin:45rpx 30rpx;-webkit-line-clamp: 3;line-clamp: 3;'>{{arrData[10].title}}</text>
+        <text class='num' style='color:#f34038'>{{arrData[10].total}}</text>
+      </view>
+    </view>
+    <view class='itembox'>
+      <view bindtap='goCommunity' class='item item1'data-id="{{arrData[11].id}}" style='width:368rpx;height:190rpx;'>
+        <text class='text' style='margin:45rpx 30rpx;-webkit-line-clamp: 3;line-clamp: 3;'>{{arrData[11].title}}</text>
+        <text class='num' style='color:#0b5ce4'>{{arrData[11].total}}</text>
+      </view>
+      <view bindtap='goCommunity' class='item item5' data-id="{{arrData[12].id}}" style='width: 368rpx;height: 121rpx;'>
+        <text class='text' style='margin:28rpx 18rpx;-webkit-line-clamp: 2;line-clamp: 2;'>{{arrData[12].title}}</text>
+        <text class='num' style='color:#049de0;'>{{arrData[12].total}}</text>
+      </view>
+    </view>
+    <view bindtap='goCommunity' class='item item6' data-id="{{arrData[3].id}}" style='width: 410rpx;height: 121rpx;margin-right:16rpx;'>
+      <text class='text' style='margin:26rpx 30rpx;-webkit-line-clamp: 2;line-clamp: 2;'>{{arrData[13].title}}</text>
+      <text class='num' style='color:#435d96;'>{{arrData[13].total}}</text>
+    </view>
+    <view bindtap='goCommunity' class='item item1' data-id="{{arrData[14].id}}" style='width:260rpx;height:121rpx;'>
+      <text class='text' style='margin:28rpx 30rpx;-webkit-line-clamp: 2;line-clamp: 2;'>{{arrData[14].title}}</text>
+      <text class='num' style='color:#0b5ce4'>{{arrData[14].total}}</text>
+    </view>
+  </view>
+</view>

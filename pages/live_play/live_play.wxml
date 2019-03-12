@@ -1,0 +1,92 @@
+<!--pages/live_play/live_play.wxml-->
+<!-- <web-view src="https://www.douyu.com/415697"></web-view> -->
+<import src="/pages/template/template.wxml" />
+<template wx:if="{{onlineTier}}" is="{{onlineData.line_type == 1 ? 'onLineTierText' : 'onLineTierPic'}}" data="{{onlineData}}">
+</template>
+<view style='bg-cont' style="position:fixed;top:9999999999999999999999999999999999rpx;">
+  <canvas class='Canvas' canvas-id="Canvas"></canvas>
+</view>
+<view class='content' wx:if="{{listArr.length>0}}">
+  
+  <image class='banner' src='https://www.yaobc.info/images/yyh/bannerzhibo.png'></image>
+  <view class='list'>
+    <!-- <view class='tit'>
+      <image class='icon' src="/images/icon_fire.png"></image>
+      <text class='txt'>热门</text>
+    </view> -->
+    <view class='list-info'>
+      <view bindtap='showAltFun' data-title="{{item.title}}" data-id="{{item.id}}" class='list-item' wx:for="{{listArr}}" data-status="{{item.status}}" data-apply="{{item.apply}}" wx:key="{{index}}">
+        <view class='title'>{{item.title}}</view>
+        <view class='list-item-con'>
+          <view class='left'>
+            <image class='img' src='{{item.img}}'></image>
+            <view class='num' wx:if="{{item.total>=1000}}">{{item.total}}人预约</view>
+          </view>
+          <view class='right'>
+            <view class='bottom' catchtap='nullFun'>
+              <view class='text'>讲师：{{item.guest}}</view>
+              <view class='time'>{{item.time}}</view>
+              <button wx:if="{{item.status==1&&item.apply<1}}" formType="submit" class='btn active btncont'>预约</button>      <form  catchsubmit="shareFun" data-type="8" data-id="{{item.id}}" report-submit='true'>
+              <button bindtap='formSubmitTwon' data-title="{{item.title}}" data-time="{{item.time}}" formType="submit" formType="submit" class='btn btncont' wx:if="{{item.status==2}}">观看</button>
+              </form>
+              <button class='btncont btn actived' wx:if="{{item.apply>0&&item.status==1}}">已预约</button>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='bottom-text'>---已经到底了---</view>
+</view>
+<view bindtap='backthat' catchtouchmove='true' class='alt' wx:if="{{showAlt}}">
+  <view wx:if="{{showCard}}" class='box'>
+    <view class='top'>
+      <image class='img-cont' src='{{topbg}}'></image>
+    </view>
+    <view class='bottom' catchtap='nullFun'>
+      <form catchsubmit="makeFun" report-submit='true' wx:if="{{!hideBtn}}" class='btn-bg'>
+        <button formType="submit" class='btn-bg'>预约观看</button>
+      </form>
+      <button wx:if="{{hideBtn}}" catchtap='backindex' class='btn-bg'>加入社群观看直播</button>
+      <view class='btn-all'>
+        <form catchsubmit="shareFun" report-submit='true'>
+          <button class='item btn' hover-class='none' data-name="shareBtn" open-type="share" plain="true" data-title="{{titles}}" formType="submit" data-img='https://www.yaobc.info/images/yyh/bannerwx1.jpg' data-id="{{id}}">
+            分享给好友
+          </button>
+        </form>
+        <form catchsubmit="haibao" report-submit='true'>
+          <button class='btn' formType="submit">分享到朋友圈</button>
+        </form>
+      </view>
+      <view class='more'>
+        <image class='logo' src='/images/logo1.png'></image>
+        <text class='text'>中国医药行业最大最活跃的社群</text>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{showTs}}" class='box-view'>
+    <image class='icon' src='/images/icon.png'></image>
+    <view class='text'>观看直播</view>
+    <view class='view'>
+      <view class='text-cont'>
+        <view class='name'>直播主题：</view>
+        <view class='text'>{{title}}</view>
+      </view>
+      <view class='text-cont'>
+        <view class='name'>直播时间：</view>
+        <view class='text time'>{{time}}</view>
+      </view>
+      <view class='text-cont'>
+        <view class='name'>观看方式：</view>
+        <view class='text'>加入药友荟任一微信群，点击直播链接，即可观看</view>
+      </view>
+    </view>
+    <view class='btn-cont'>
+      <form  catchsubmit="shareFun" report-submit='true' data-id="{{id}}">
+        <button formType="submit" class='back btn' bindtap='backthat'>继续预约</button>
+        <button formType="submit" class='add btn' bindtap='backindex'>加入社群</button>
+      </form>
+    </view>
+  </view>
+</view>
+<!-- <image class='backindex' bindtap='backindex' src='/images/backindex.png'></image> -->

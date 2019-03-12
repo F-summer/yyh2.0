@@ -1,0 +1,84 @@
+<!--pages/mycard/mycard.wxml-->
+<view class='top'>
+  <image class='img-bg' src="/images/bgcard.png"></image>
+  <view class='all-top-cont'>
+    <view class='t'>
+      <view class='head-name'>
+        <image src='{{dataobj.hand_img}}' class='head'></image>
+        <view class='name-cont'>
+          <view class='text-name'>{{dataobj.real_name?dataobj.real_name:dataobj.nick_name}}</view>
+          <view class='text'>{{dataobj.duty?dataobj.duty:'暂未填写'}}</view>
+          <view class='text'>{{dataobj.company?dataobj.company:'暂未填写'}}</view>
+        </view>
+      </view>
+      <view class='rightmsg'>
+        <form>
+          <button class='btn' bindtap='edit'>编辑名片</button>
+        </form>
+      </view>
+    </view>
+    <view class='ponser-msg'>
+      <view class='text'>
+        <text class='tit'>微信：</text>{{dataobj.wechat_num?dataobj.wechat_num:'暂未填写'}}</view>
+      <view class='text'>
+        <text class='tit'>手机：</text>{{dataobj.phone_num?dataobj.phone_num:'暂未填写'}}</view>
+      <view class='text'>
+        <text class='tit'>邮箱：</text>{{dataobj.mail?dataobj.mail:'暂未填写'}}</view>
+      <view class='text'>
+        <text class='tit'>地址：</text>{{dataobj.company_address?dataobj.company_address:'暂未填写'}}</view>
+    </view>
+  </view>
+  <!-- <image class='qianbao' src='/images/qianbao.png'></image> -->
+</view>
+<view class='bottom-more'>
+  <view class='ul'>
+    <view class='num-text'>
+      <text class='num'>{{numobj.visit_num?numobj.visit_num:0}}</text>
+      <text class='text'>访客</text>
+    </view>
+    <view class='num-text'>
+      <text class='num'>{{numobj.approval_num?numobj.approval_num:0}}</text>
+      <text class='text'>认可</text>
+    </view>
+    <view class='num-text'>
+      <text class='num'>{{numobj.follow_num?numobj.follow_num:0}}</text>
+      <text class='text'>关注</text>
+    </view>
+  </view>
+  <view class='box'>
+    <text class='tit'>一句话简介</text>
+    <view class='msg'>{{dataobj.introduce?dataobj.introduce:'暂未填写'}}</view>
+  </view>
+  <view class='box'>
+    <text class='tit'>行业标签</text>
+    <view class='box-info' wx:if="{{dataobj.trade_label.length>0}}">
+      <view class='item-text' wx:for="{{dataobj.trade_label}}" wx:key="{{index}}">
+        {{item}}
+      </view>
+    </view>
+    <view wx:if="{{dataobj.trade_label.length==0}}" class='msg'>暂未填写</view>
+  </view>
+  <view class='box'>
+    <text class='tit'>负责什么</text>
+    <view class='msg'>{{dataobj.responsible?dataobj.responsible:'暂未填写'}}</view>
+  </view>
+  <view class='box'>
+    <text class='tit'>想要什么</text>
+    <view class='msg'>{{dataobj.want?dataobj.want:'暂未填写'}}</view>
+  </view>
+  <view class='box'>
+    <text class='tit'>我的照片</text>
+    <view class='img-box' wx:if="{{dataobj.photo_list.length>0}}">
+      <image src='{{item}}' data-src="{{item}}" bindtap='imgPre' wx:for="{{dataobj.photo_list}}" class='img-item' wx:key="{{index}}"></image>
+    </view>
+    <view wx:if="{{dataobj.photo_list.length==0}}" class='msg'>暂未上传</view>
+  </view>
+</view>
+<view class='fixed-bottom'>
+  <form>
+    <button class='btn shear' hover-class='none'  open-type="share" data-title="{{'Hi～我是'+dataobj.real_name+'，很高兴认识您！'}}" data-img="{{imgCard}}">分享给好友</button>
+  </form>
+  <form>
+    <button class='btn haibao' bindtap='myPoster'>生成我的海报</button>
+  </form>
+</view>

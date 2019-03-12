@@ -1,0 +1,68 @@
+/* pages/searchPage/searchPage.wxss */
+page{
+  background-color: #f4f4f4;
+  padding-top: 120rpx;
+  padding-bottom: 24rpx;
+}
+.indexAther{
+  padding: 25rpx 32rpx;
+  background-color: #fff;
+  position:fixed; 
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+.sea-add-cont{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.sea-add-cont .search{
+  display: flex;
+  align-items: center;
+  width: 605rpx;
+	height: 72rpx;
+	background-color: #f4f4f4;
+	border-radius: 8rpx;
+  overflow: hidden;
+  padding-left: 24rpx;
+  margin-right: 24rpx;
+  position: relative;
+}
+.sea-add-cont .search .search-icon{
+  width: 27rpx;
+  height: 28rpx;
+  margin-right: 16rpx;
+}
+.sea-add-cont .search .search-inp{
+  font-size: 30rpx;
+	color: #333;
+}
+.sea-add-cont .cancer-btn{
+  padding: 0;
+  margin: 0;
+  background: transparent;
+	border-radius: 36rpx;
+  font-size: 30rpx;
+	line-height: 72rpx;
+	color: #333333;
+  white-space: nowrap;
+}
+.sea-add-cont .cancer-btn::after{
+  border:none;
+}
+.clear-cont{
+  position: absolute;
+  right:24rpx;
+  top: 0;
+  bottom: 0;
+  width: 50rpx;
+  z-index: 999;
+}
+.clear{
+  margin: 20rpx;
+  width: 32rpx;
+  height: 32rpx;
+}

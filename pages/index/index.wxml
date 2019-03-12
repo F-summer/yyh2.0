@@ -1,0 +1,29 @@
+<!--pages/index/index.wxml-->
+<import src="/pages/template/template.wxml" />
+<template wx:if="{{onlineTier}}" is="{{onlineData.line_type == 1 ? 'onLineTierText' : 'onLineTierPic'}}" data="{{onlineData}}">
+</template>
+<image wx:if="{{showLoading}}" class='loading' src='/images/loading.gif'></image>
+<view style="display:{{showLoading?'none':'block'}}" class='content'>
+  <carousel id="carousel" bind:myevent="pushFormSubmit"></carousel>
+  <searchTop cityName="{{cityName}}" bind:myevent="setSelctFun"></searchTop>
+  <!-- <indexAther cityName="{{cityName}}" id="indexAther"></indexAther> -->
+  <flockList bind:showLoginFun="showLoginFunD" cityActive="{{cityActive}}" showActive="{{showActive}}" isfilex="{{isfilex}}" businessName="{{businessName}}" cityName="{{cityName}}" themeName="{{themeName}}" textcont="{{textcont}}" bind:resetFun="onPullDownRefresh" address="{{address}}" bind:myevent="changeText" id="flockList"
+    bind:addGroup="addGroup" pageIndex="{{pageIndex}}" bind:selectFun="setSelctFun"></flockList>
+  <!-- 加群展示 -->
+
+  <!-- 助力群展示 -->
+
+</view>
+<!-- 省份 -->
+<g-province bind:getProvince="getCityShow" bendi="{{bendi}}" provinceShow="{{provinceShow}}" id="province"></g-province>
+<!-- 业务 -->
+<g-theme list="{{businessList}}" province="{{province}}" dataType="business" themeShow="{{businessShow}}" id="gTheme" bind:name="getBusinessName"></g-theme>
+<!-- 主题 -->
+<g-theme list="{{themeList}}" province="{{province}}" dataType="theme" themeShow="{{themeShow}}" id="gTheme" bind:name="getThemeName"></g-theme>
+<!-- 城市部分展示 -->
+<g-city cityShow="{{cityShow}}" province="{{province}}" cityList="{{cityList}}" bind:city="returnCity"></g-city>
+
+<g-group id="groupDes" groupShow="{{groupShow}}" groupid="{{gid}}"></g-group>
+<g-zhuligroup id="zhuliGroup" zhuliGroupShow="{{zhuliGroupShow}}" groupid="{{gid}}"></g-zhuligroup>
+<login bind:hideLoginFun="hideLoginFunD"  showLogo="{{showLogo}}"></login>
+<image src='/images/jianqun.png' class='jianqun' bindtap='goBuild'></image>

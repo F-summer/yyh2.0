@@ -1,0 +1,148 @@
+/* pages/construction_group/construction_group.wxss */
+
+.container {
+  width: 100%;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top-search {
+  width: 686rpx;
+  height: 72rpx;
+  margin-top: 12rpx;
+  display: flex;
+  align-items: center;
+  border-radius: 16rpx;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.08);
+}
+
+.search-icon {
+  width: 36rpx;
+  height: 36rpx;
+  margin: 0rpx 20rpx;
+}
+
+.search-input {
+  width: 590rpx;
+}
+
+.placeholder {
+  font-size: 30rpx;
+  font-family: "PingFangSC";
+  color: rgb(212, 212, 212);
+}
+
+/* 保留样式 */
+
+.showNoMsg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.nomsg {
+  width: 364rpx;
+  height: 230rpx;
+  display: block;
+  margin: 32rpx auto;
+}
+
+.notext {
+  display: block;
+  text-align: center;
+  color: #999;
+  font-size: 30rpx;
+}
+
+/* 复用 */
+
+.top-sort {
+  width: 690rpx;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.sort {
+  height: 60rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #4284f7;
+  padding: 0rpx 32rpx;
+  border-radius: 32rpx;
+  margin-right: 20rpx;
+}
+
+.sort-img {
+  width: 28rpx;
+  height: 24rpx;
+  margin-right: 16rpx;
+}
+
+.sort-text {
+  font-size: 24rpx;
+  color: #fff;
+}
+
+.invitetext {
+  font-size: 24rpx;
+  font-family: "PingFangSC";
+  color: rgb(153, 153, 153);
+}
+
+.content {
+  padding: 0 32rpx;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.jianqun {
+  width: 686rpx;
+  height: 72rpx;
+  border-radius: 16rpx;
+  background-color: rgb(66, 132, 247);
+  box-shadow: 8rpx 6rpx 16rpx 2rpx rgba(66, 132, 247, 0.16);
+  position: fixed;
+  bottom: 17rpx;
+  left: 32rpx;
+  z-index: 4406;
+  font-size: 30rpx;
+  font-family: "PingFangSC";
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+.jianqun .text{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  line-height: 72rpx;
+}
+
+.details_button {
+  position: absolute;
+  top: 0;
+  z-index: 9999;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.bottom {
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  color: #999;
+  font-size: 28rpx;
+  margin-bottom: 60rpx;
+}

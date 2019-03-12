@@ -1,0 +1,155 @@
+<!--pages/register/register.wxml-->
+<import src="/pages/template/template.wxml" />
+<template wx:if="{{onlineTier}}" is="{{onlineData.line_type == 1 ? 'onLineTierText' : 'onLineTierPic'}}" data="{{onlineData}}">
+</template>
+<view class='container'>
+  <image class="img" src="https://www.yaobc.info/images/yyh/hiyi-top.png"></image>
+  <form bindsubmit="formSubmit" report-submit='true'>
+    <view class='part'>
+      <view class='title'>联系人信息</view>
+      <view class='form-item'>
+        <label>联系人：</label>
+        <input type='text' name="name" placeholder='请输入联系人姓名' placeholder-class='placeholder'></input>
+        <view class='xing'>*</view>
+      </view>
+      <view class='form-item'>
+        <label>手机号：</label>
+        <input type='number' name="phone" placeholder='请输入手机号码' placeholder-class='placeholder'></input>
+        <view class='xing'>*</view>
+      </view>
+      <view class='form-item'>
+        <label>单位：</label>
+        <input type='text' name="company_name" placeholder='请输入单位名称' placeholder-class='placeholder'></input>
+        <view class='xing'>*</view>
+      </view>
+    </view>
+    <view class='part'>
+      <view class='title'>第一参会人员</view>
+      <view class='form-item'>
+        <label>姓名：</label>
+        <input type='text' name="name1" placeholder='请输入参会人姓名' placeholder-class='placeholder'></input>
+        <view class='xing'>*</view>
+      </view>
+      <view class='form-item'>
+        <label>性别：</label>
+        <radio-group name="sex1">
+          <label>
+            <radio value="0">先生</radio>
+          </label>
+          <label>
+            <radio value="1">女士</radio>
+          </label>
+
+        </radio-group>
+        <view class='xing'></view>
+      </view>
+      <view class='form-item'>
+        <label>部门：</label>
+        <input type='text' name="department1" placeholder='请输入所属部门' placeholder-class='placeholder'></input>
+        <view class='xing'></view>
+      </view>
+      <view class='form-item'>
+        <label>职位：</label>
+        <input type='text' name="position1" placeholder='请输入职位' placeholder-class='placeholder'></input>
+        <view class='xing'></view>
+      </view>
+      <view class='form-item'>
+        <label>电话：</label>
+        <input type='number' name="phone1" placeholder='请输入电话' placeholder-class='placeholder'></input>
+        <view class='xing'></view>
+      </view>
+    </view>
+    <view class='part'>
+      <view class='title'>第二参会人员</view>
+      <view class='form-item'>
+        <label>姓名：</label>
+        <input type='text' name="name2" placeholder='请输入参会人名' placeholder-class='placeholder'></input>
+        <view class='xing'></view>
+      </view>
+      <view class='form-item'>
+        <label>性别：</label>
+        <radio-group name="sex2">
+          <label>
+            <radio value="0">先生</radio>
+          </label>
+          <label>
+            <radio value="1">女士</radio>
+          </label>
+        </radio-group>
+        <view class='xing'></view>
+      </view>
+      <view class='form-item'>
+        <label>部门：</label>
+        <input type='text' name="department2" placeholder='请输入所属部门' placeholder-class='placeholder'></input>
+        <view class='xing'></view>
+      </view>
+      <view class='form-item'>
+        <label>职位：</label>
+        <input type='text' name="position2" placeholder='请输入职位' placeholder-class='placeholder'></input>
+        <view class='xing'></view>
+      </view>
+      <view class='form-item'>
+        <label>电话：</label>
+        <input type='number' name="phone2" placeholder='请输入电话' placeholder-class='placeholder'></input>
+        <view class='xing'></view>
+      </view>
+    </view>
+    <view class='part'>
+      <view class='yijian'>
+        <view class='title'>医保招标政策建议</view>
+        <textarea type='text' name="advice" placeholder='包含不限于基本药物政策，医疗保障政策，集中招标政策，研发与创新政策等' placeholder-class='placeholder'></textarea>
+      </view>
+    </view>
+    <view class='part'>
+      <view class='yijian'>
+        <view class='title'>现有已执行的政策在执行落实中 存在的问题及建设性意见
+        </view>
+        <textarea type='text' name="opinion"></textarea>
+      </view>
+    </view>
+    <view class='part'>
+      <view class='title'>报名条件</view>
+      <checkbox-group name="member" bindchange="anyAll">
+        <label class="checkbox">
+          <checkbox value="1" checked='{{member_ch}}' />我是中国医药企业管理协会会员单位
+        </label>
+      </checkbox-group>
+      <!-- <view class='md' bindtap='mingdan'>点击查阅协会会员名单</view> -->
+      <view class='md'>不确定会员单位身份?请与协会秘书处联络 !</view>
+      <view class='md'>电 话：
+        <view class='margin' bindtap='dianhua_one'>010-68004156</view>
+        <view  bindtap='dianhua_two'>010-68004150</view>
+      </view>
+      <checkbox-group name="is_attend" bindchange="anyAll">
+        <label class="checkbox">
+          <checkbox value="1" checked='{{is_attend_ch}}' />我是同期举办中国医药产业发展高峰论坛的参会企业
+        </label>
+      </checkbox-group>
+      <checkbox-group name="is_company" bindchange="anyAll">
+        <label class="checkbox">
+          <checkbox value="1" checked='{{is_company_ch}}' />我也要同期参加中国医药产业发展高峰论坛
+        </label>
+      </checkbox-group>
+      <view class='more' bindtap='back'>查看更多论坛信息</view>
+      <checkbox-group name="is_not_all" bindchange="notAll">
+        <label class="checkbox">
+          <checkbox value="1" checked='{{is_not_all_ch}}' />以上都不是，我也想申请参加
+        </label>
+      </checkbox-group>
+    </view>
+
+    <button formType="submit" class='submit'>提交</button>
+
+  </form>
+
+
+  <!-- <view class='zhezhao' wx:if="{{maskShow}}" catchtouchmove='true' bindtap='close'>
+    <scroll-view class='zhezhao-content' scroll-y="true">
+      <block wx:for="{{datalist}}" wx:key="index">
+        <view class='scroll-item'>{{item}}</view>
+      </block>
+    </scroll-view>
+
+  </view> -->
+
+</view>

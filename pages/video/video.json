@@ -1,0 +1,7 @@
+{
+  "disableScroll": true,
+  "navigationBarTitleText": "赛柏蓝直播间",
+  "usingComponents": {
+    "txv-video": "plugin://tencentvideo/video"
+  }
+}

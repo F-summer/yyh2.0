@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "药友荟",
+    "usingComponents": {
+        "g-scrollInfo": "/components/scrollInfo/scrollInfo"
+    }
+}

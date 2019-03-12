@@ -1,0 +1,181 @@
+.container, page {
+  width: 750rpx;
+  height: 100%;
+  background-color: #f4f4f4;
+}
+
+.content {
+  width: 750rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content-top {
+  width: 750rpx;
+  height: 192rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.avatar {
+  width: 110rpx;
+  height: 110rpx;
+  margin-left: 32rpx;
+  margin-right: 32rpx;
+  border-radius: 8rpx;
+}
+
+.user {
+  display: flex;
+}
+
+.user-info {
+  height: 110rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.user-name {
+  font-size: 34rpx;
+  font-weight: 600;
+}
+
+.level {
+  width: 24rpx;
+  height: 28rpx;
+}
+
+.user-zhiwei {
+  width: 350rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.minpian {
+  width: 204rpx;
+  height: 56rpx;
+  border-radius: 28rpx 0rpx 0rpx 28rpx;
+  background-color: #2086ff;
+  font-size: 24rpx;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  line-height: 56rpx;
+  float: right;
+}
+
+.num-info {
+  width: 686rpx;
+  height: 134rpx;
+  border-top: 1rpx solid #ebebeb;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.num-des {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.number {
+  font-size: 40rpx;
+  font-weight: 600;
+}
+
+.desc {
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 8rpx;
+}
+
+.jiange {
+  width: 750rpx;
+  height: 20rpx;
+  background-color: #f4f4f4;
+}
+
+.money {
+  display: flex;
+  width: 750rpx;
+  height: 94rpx;
+  align-items: center;
+  justify-content: center;
+}
+
+.money-item {
+  width: 370rpx;
+  height: 44rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.one {
+  border-right: 1rpx solid #ebebeb;
+}
+
+.money-item image {
+  width: 30rpx;
+  height: 32rpx;
+  margin: 0rpx 18rpx;
+}
+
+.list-item {
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  height: 110rpx;
+  border-bottom: 1rpx solid #ebebeb;
+  width: 686rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 30rpx;
+  border-radius: 0;
+}
+
+.list-itemT {
+  height: 110rpx;
+  border-bottom: 1rpx solid #ebebeb;
+  width: 686rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 30rpx;
+  padding: 0rpx;
+  background-color: #fff;
+}
+
+button::after {
+  border: none;
+}
+
+.list-itemT::after {
+  border: none;
+}
+
+.item-desc {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  width: 30rpx;
+  height: 32rpx;
+  margin-right: 20rpx;
+}
+
+.arrow {
+  width: 18rpx;
+  height: 36rpx;
+}

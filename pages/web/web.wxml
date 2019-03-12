@@ -1,0 +1,5 @@
+<!--pages/web/web.wxml-->
+<import src="/pages/template/template.wxml" />
+<template wx:if="{{onlineTier}}" is="{{onlineData.line_type == 1 ? 'onLineTierText' : 'onLineTierPic'}}" data="{{onlineData}}">
+</template>
+<web-view src="https://mp.weixin.qq.com/s/FNg3Rg8VpeqZN0x9Y4tPvA"></web-view>

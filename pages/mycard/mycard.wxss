@@ -1,0 +1,244 @@
+/* pages/mycard/mycard.wxss */
+
+.top {
+  position: relative;
+  width: 100%;
+  height: 370rpx;
+  background-color: #0f59da;
+}
+
+.top .img-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.all-top-cont {
+  position: absolute;
+  padding: 32rpx;
+  padding-bottom: 0;
+  width: 100%;
+}
+
+.all-top-cont .t {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30rpx;
+}
+
+.all-top-cont .t .head-name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.all-top-cont .t .head-name .head {
+  width: 110rpx;
+  height: 110rpx;
+  margin-right: 24rpx;
+  border-radius: 16rpx;
+}
+
+.all-top-cont .t .head-name .name-cont {
+  display: flex;
+  flex-direction: column;
+}
+
+.all-top-cont .t .head-name .name-cont .text-name {
+  font-size: 34rpx;
+  color: #fff;
+  margin-bottom: 24rpx;
+  font-weight: bold;
+}
+
+.all-top-cont .t .head-name .name-cont .text {
+  font-size: 24rpx;
+  color: #fff;
+  margin-bottom: 10rpx;
+  width: 350rpx;
+  height: 24rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.all-top-cont .t .rightmsg {
+  width: 160rpx;
+  height: 48rpx;
+}
+
+.all-top-cont .t .rightmsg .btn {
+  width: 160rpx;
+  height: 48rpx;
+  border: solid 1rpx #fff;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  font-size: 28rpx;
+  color: #fff;
+  border-radius: 0;
+  line-height: 48rpx;
+}
+
+button::after {
+  border: none;
+}
+
+.all-top-cont .ponser-msg {
+  display: flex;
+  flex-direction: column;
+}
+
+.all-top-cont .ponser-msg .text {
+  font-size: 28rpx;
+  color: #fff;
+  margin-bottom: 16rpx;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 28rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.all-top-cont .ponser-msg .text .tit {
+  font-weight: bold;
+}
+
+.qianbao {
+  position: absolute;
+  top: 170rpx;
+  right: 24rpx;
+  z-index: 9999;
+  width: 166rpx;
+  height: 134rpx;
+}
+
+.bottom-more {
+  width: 100%;
+  padding: 0 32rpx;
+  padding-bottom: 120rpx;
+}
+
+.bottom-more .ul {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 40rpx 0;
+}
+
+.bottom-more .ul .num-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bottom-more .ul .num-text .num {
+  text-align: center;
+  font-size: 40rpx;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 16rpx;
+}
+
+.bottom-more .ul .num-text .text {
+  text-align: center;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.bottom-more .box {
+  width: 686rpx;
+  background-color: #f8f8f8;
+  border-radius: 16rpx;
+  margin-bottom: 16rpx;
+  padding: 32rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.bottom-more .box .tit {
+  font-size: 34rpx;
+  color: #333;
+  font-weight: bolder;
+  margin-bottom: 24rpx;
+}
+
+.bottom-more .box .msg {
+  font-size: 28rpx;
+  color: #333;
+  line-height: 40rpx;
+  text-align: justify;
+}
+
+.bottom-more .box .box-info {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.bottom-more .box .box-info .item-text {
+  height: 48rpx;
+  border: solid 1rpx #999;
+  padding: 0 24rpx;
+  line-height: 48rpx;
+  font-size: 24rpx;
+  color: #333;
+  margin-right: 16rpx;
+  margin-bottom: 16rpx;
+}
+
+.bottom-more .box .img-box {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -12rpx;
+}
+
+.bottom-more .box .img-box .img-item {
+  width: 143rpx;
+  height: 143rpx;
+  border-radius: 16rpx;
+  margin-bottom: 12rpx;
+  margin-right: 12rpx;
+}
+
+.fixed-bottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 154rpx;
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 10%, rgba(255, 255, 255, 1) 20%, rgba(255, 255, 2555, 1) 30%);
+  background-blend-mode: normal, normal;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 46rpx 32rpx;
+  padding-bottom: 20rpx;
+}
+
+.fixed-bottom .btn {
+  width: 331rpx;
+  height: 88rpx;
+  border-radius: 16rpx;
+  border: solid 1rpx #4284f7;
+  line-height: 88rpx;
+  padding: 0;
+  margin: 0;
+  font-size: 30rpx;
+}
+
+.fixed-bottom .btn.shear {
+  color: #4284f7;
+  background: transparent;
+}
+
+.fixed-bottom .btn.haibao {
+  color: #fff;
+  background: #4284f7;
+}

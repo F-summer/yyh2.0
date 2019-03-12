@@ -1,0 +1,100 @@
+<!--pages/edit/edit.wxml-->
+<view>
+   <form bindsubmit="formSubmit" class='container' report-submit='true'> 
+    <view class='item'>
+      <view class='label'>头像</view>
+      <image class='head-img' src="{{head_img}}"></image>
+    </view>
+    <view class='item'>
+      <view class='label'>昵称</view>
+      <view class='input'>{{nickName}}</view>
+    </view>
+    <view class='item'>
+      <view class='red'></view>
+      <view class='label'>姓名</view>
+      <input class='input' name='name' value='{{dataobj.real_name}}'  placeholder='请输入您的姓名'></input>
+    </view>
+    <view class='item'>
+      <view class='red'></view>
+      <view class='label'>公司</view>
+      <input class='input'  name='company' value='{{dataobj.company}}' placeholder='请输入您的公司名称'></input>
+    </view>
+    <view class='item'>
+      <view class='red'></view>
+      <view class='label'>职务</view>
+      <input class='input'  name='post' value='{{dataobj.duty}}' placeholder='请输入您的职位名称'></input>
+    </view>
+    <view class='item'>
+      <view class='label'>地址</view>
+      <input class='input' name='address' value='{{dataobj.company_address}}' placeholder='请输入您的单位地址'></input>
+    </view>
+    <view class='jiange'></view>
+    <view class='item'>
+      <view class='red'></view>
+      <view class='label'>手机号</view>
+      <input class='inputTh' type='text' name="phone" value='{{phone_num}}'  placeholder='请输入手机号'></input>
+       <button  class='details_button' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取</button>
+      <switch checked="{{phoneHide}}" bindchange="switch1Change" />
+      <view class='show-hide'>{{hideone}}</view>
+    </view>
+    <view class='item'>
+      <view class='red'></view>
+      <view class='label'>微信号</view>
+      <input class='inputT' name="wechat" value='{{dataobj.wechat_num}}' placeholder='请输入微信号'></input>
+      <switch checked="{{wxHide}}" bindchange="switch2Change" />
+      <view class='show-hide'>{{hidetwo}}</view>
+    </view>
+    <view class='item'>
+      <view class='label'>邮箱</view>
+      <input class='input' name="youxiang" value='{{dataobj.mail}}' placeholder='请输入您的邮箱'></input>
+    </view>
+    <view class='tishi'>一句话简介
+      <span>(必填)</span>
+      <label>{{des}}/30</label>
+    </view>
+    <textarea class='des' maxlength="30" name="des" value='{{dataobj.introduce}}'  placeholder='一句话介绍自己，会出现在名片上、海报中，认真写哦' bindinput="descibe"></textarea>
+    <view class='tishi'>行业标签
+      <span>(至少一项)</span>
+      <label>{{biaoqian}}/20</label>
+    </view>
+    <view class='item'>
+      <input class='inputS' maxlength="10" value='{{biaoqianTxt}}' bindinput="biaoqian" placeholder='单行输入(最多十个字)' placeholder-class='placeholder'></input>
+      <view class='biaoqian-tijiao' bindtap='biaoqianSub'>提交</view>
+    </view>
+    <view class='biaoqian-list' wx:if="{{biaoqianArr.length>0}}">
+      <block wx:for="{{biaoqianArr}}" wx:key="index">
+        <view class='biaoqian-item' bindtap='delBianqian' data-id="{{index}}">
+          <image class="close" src="/images/biaoqian_close.png"></image>{{item}}</view>
+      </block>
+    </view>
+    <view class='tishi'>负责什么
+      <span>(必填)</span>
+      <label>{{fuze}}/200</label>
+    </view>
+    <textarea class='fuze' maxlength="200"  name="fuze" placeholder-class='placeholder' value='{{dataobj.responsible}}' placeholder='请描述一下您的业务范围' bindinput="fuze"></textarea>
+    <view class='tishi'>想要什么
+      <span>(可选)</span>
+      <label>{{want}}/200</label>
+    </view>
+    <textarea class='fuze' maxlength="200" name='want' placeholder-class='placeholder' value='{{dataobj.want}}' placeholder='简单描述下您加入社群想要什么' bindinput="want"></textarea>
+    <view class='img-up-cont'>
+      <view class='tishi'>我的照片
+        <span>(可选)</span>
+        <label>最多上传
+          <text style='color:#4284f7'>8</text>张</label>
+      </view>
+      <view class='img-info'>
+        <view wx:if="{{imgArr.length>0}}" class='img-item' wx:for="{{imgArr}}" wx:key="{{index}}">
+          <image class='img' bindtap='imgPre' data-src='{{item.src}}' src='{{item.src}}'></image>
+          <image class='del-btn' bindtap='delImgFun' data-index="{{index}}" src='/images/img_del.png'></image>
+        </view>
+        <view class='img-item' wx:if="{{imgArr.length<8}}">
+          <image class='img' src='/images/img_add.png'></image>
+          <button class='img-add-btn' hover-class='none' type="default" size="mini" data-index="{{index}}" bindtap='chooseimage'></button>
+        </view>
+      </view>
+    </view>
+    <!-- <view class='submit' bindtap='sendDataFun'>提交</view> -->
+    <button formType="submit" class='submit'>保 存</button>
+  </form>
+</view>

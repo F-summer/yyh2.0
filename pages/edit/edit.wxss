@@ -1,0 +1,248 @@
+/* pages/edit/edit.wxss */
+
+.container {
+  width: 750rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 60rpx;
+}
+
+.item {
+  width: 686rpx;
+  height: 110rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #ebebeb;
+  position: relative;
+  margin: 0rpx 32rpx;
+}
+
+.red {
+  width: 8rpx;
+  height: 8rpx;
+  border-radius: 4rpx;
+  background-color: #ff5252;
+  position: absolute;
+  top: 50rpx;
+  left: -20rpx;
+}
+
+.label {
+  width: 126rpx;
+  display: flex;
+  vertical-align: center;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.input {
+  width: 559rpx;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.input::placeholder {
+  color: #999;
+  font-size: 30rpx;
+}
+
+.inputT {
+  width: 364rpx;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.inputT::placeholder {
+  color: #999;
+  font-size: 30rpx;
+}
+
+.inputTh {
+  width: 212rpx;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.inputTh::placeholder {
+  color: #999;
+  font-size: 30rpx;
+}
+
+.details_button {
+  width: 120rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #4284f7;
+  border: 1rpx solid #4284f7;
+  border-radius: 16rpx;
+}
+
+.head-img {
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 8rpx;
+}
+
+.jiange {
+  width: 100%;
+  height: 22rpx;
+  background-color: #f4f4f4;
+}
+
+.show-hide {
+  font-size: 30rpx;
+  color: #333;
+}
+
+.tishi {
+  width: 750rpx;
+  height: 76rpx;
+  line-height: 76rpx;
+  background-color: #f4f4f4;
+  font-size: 30rpx;
+  color: #333;
+  padding-left: 32rpx;
+}
+
+.tishi span {
+  color: #999;
+  margin-left: 20rpx;
+}
+
+.tishi label {
+  float: right;
+  margin-right: 32rpx;
+  font-size: 30rpx;
+  color: #999;
+}
+
+.des {
+  width: 686rpx;
+  font-size: 30rpx;
+  line-height: 45rpx;
+  color: #333;
+  height: 120rpx;
+  padding: 20rpx 0rpx;
+  margin: 0rpx 32rpx;
+}
+
+.inputS {
+  width: 540rpx;
+}
+
+.placeholder {
+  color: #999;
+  font-size: 30rpx;
+}
+
+.biaoqian-tijiao {
+  width: 120rpx;
+  height: 55rpx;
+  line-height: 55rpx;
+  border-radius: 16rpx;
+  background-color: #4284f7;
+  text-align: center;
+  font-size: 24rpx;
+  color: #fff;
+}
+
+.fuze {
+  width: 686rpx;
+  font-size: 30rpx;
+  line-height: 45rpx;
+  color: #333;
+  height: 300rpx;
+  padding: 20rpx 0rpx;
+  margin: 0rpx 32rpx;
+}
+
+.img-up-cont .text {
+  font-size: 26rpx;
+  color: #999;
+  margin-bottom: 24rpx;
+}
+
+.img-up-cont .text .txt {
+  color: #4284f7;
+}
+
+.img-up-cont .img-info {
+  margin: 19rpx;
+}
+
+.img-up-cont .img-info .img-item {
+  width: 154rpx;
+  height: 154rpx;
+  position: relative;
+  margin: 12rpx;
+  display: inline-block;
+}
+
+.img-up-cont .img-info .img-item .img {
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
+  width: 100%;
+  height: 100%;
+  border-radius: 18rpx;
+}
+
+.img-up-cont .img-info .img-item .img-add-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+}
+
+.img-up-cont .img-info .img-item .del-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.submit {
+  width: 686rpx;
+  height: 88rpx;
+  background-color: #4284f7;
+  line-height: 88rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 30rpx;
+  border-radius: 16rpx;
+  margin: 30rpx 32rpx;
+}
+
+.biaoqian-list {
+  width: 750rpx;
+  padding: 20rpx 32rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.biaoqian-item {
+  padding: 13rpx 25rpx 13rpx 51rpx;
+  border: 1rpx solid #ebebeb;
+  font-size: 24rpx;
+  color: #333;
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+  float: left;
+  position: relative;
+  white-space: nowrap;
+}
+
+.close {
+  width: 18rpx;
+  height: 18rpx;
+  position: absolute;
+  left: 16rpx;
+  top: 15rpx;
+}

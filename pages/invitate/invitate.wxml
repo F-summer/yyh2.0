@@ -1,0 +1,73 @@
+<!-- pages/invitate/invitate.wxml -->
+<import src="/pages/template/template.wxml" />
+<template wx:if="{{onlineTier}}" is="{{onlineData.line_type == 1 ? 'onLineTierText' : 'onLineTierPic'}}" data="{{onlineData}}">
+</template>
+<view class="container">
+  <image class="bg" src="/images/invitate/bg.png"></image>
+  <view class='group-content top'>
+    <view class="group-top">
+      <image class="red" src="/images/invitate/red.png"></image>
+      <view class="group_name">
+        <image class="userImg" src="{{avatarUrl}}"></image>
+        <view class="username">
+          <view class='username-text'>{{username}}</view>
+          <view class="text">我创建一个特别棒的药友群，帮我来助力！</view>
+        </view>
+      </view>
+      <image class="maohao" src="/images/invitate/maohao.png"></image>
+    </view>
+    <view class="group-info">
+      <image class="status" src="/images/invitate/ing.png"></image>
+      <view class="group-name">{{objInfo.room_name}}</view>
+    </view>
+    <view class="zhuliqingkuang">
+      <view>助力情况:</view>
+      <view class="redfont">{{objInfo.actual_help}}/{{objInfo.need_help}}</view>
+    </view>
+    <progress activeColor="#ffa643" class="progress" percent="{{objInfo.actual_help/objInfo.need_help*100}}" active />
+
+    <block wx:if="{{objInfo.status==3}}">
+      <view class="btn-list">
+        <image class="two" data-id="{{objInfo.id}}" src="/images/invitate/injoy-group.png" bindtap='injoygroup'></image>
+        <view style="width:22rpx;"></view>
+        <image class="two" src="/images/invitate/more-group.png" bindtap='moreGroup'></image>
+      </view>
+    </block>
+    <block wx:if="{{objInfo.status==2}}">
+      <view class="btn-list">
+        <image class="one" src="/images/invitate/chaoshi.png" bindtap='moreGroup'></image>
+      </view>
+    </block>
+    <block wx:if="{{objInfo.status==1}}">
+      <view class="btn-list">
+        <image class="one" src="/images/invitate/success.png" bindtap='moreGroup'></image>
+      </view>
+    </block>
+    <block wx:if="{{objInfo.status==0}}">
+      <view class="btn-list">
+        <image class="one" bindtap='zhuliFun' src="/images/invitate/zhuli.png"></image>
+      </view>
+    </block>
+    <view class='date'>{{clock}}</view>
+  </view>
+  <view class='group-content scrollInfo'>
+    <view class="zhulijilu">助力记录</view>
+    <g-scrollInfo list='{{userInfoList}}' lenth="{{lenth}}"></g-scrollInfo>
+  </view>
+  <!-- 进群按钮 -->
+  <view class='alert-cont' wx:if="{{showAlt}}" bindtap='headAlt'>
+    <view class='show-img'>
+      <!-- <image class='red-head' src='/images/head-red.png'></image> -->
+      <image class='img' src='/images/showImg.gif'></image>
+      <view class='go-flock-btn'>
+        <view class='top-cont'>
+          <image class='icon' src='/images/weixin.png'></image>
+          <text class='txt'>马上进群</text>
+        </view>
+        <button send-message-title="{{objInfo.room_name}}" send-message-img="https://www.yaobc.info/images/yyh/sharecards.png" show-message-card="true" send-message-path="../index/index?id={{sendId}}" class='details_button' open-type='contact' plain>
+        </button>
+      </view>
+      <text class='text'>点击按钮后，请如上图操作马上进群</text>
+    </view>
+  </view>
+</view>

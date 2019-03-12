@@ -1,0 +1,54 @@
+<!-- pages/construction_group/construction_group.wxml -->
+<import src="/pages/template/template.wxml" />
+<template wx:if="{{onlineTier}}" is="{{onlineData.line_type == 1 ? 'onLineTierText' : 'onLineTierPic'}}" data="{{onlineData}}">
+</template>
+<view class='container'>
+  <view class="top-search">
+    <image src="/images/icon_search.png" alt="" class="search-icon"></image>
+    <input type="text" placeholder="搜索待建群" bindinput="searchWord" placeholder-class="placeholder" />
+  </view>
+  <!-- <view class="construction-group">
+    <view class="sort" bindtap='sortStart'>
+      <image class="sort-img" src="/images/construction-group/sort.png"></image>
+      <view class="sort-text">{{sort}}</view>
+    </view>
+    <view class="apply">
+      <view class='box' >
+        <view>申请建群</view>
+        <image src="/images/construction-group/group.png"></image>
+      </view>
+      
+    </view>
+  </view>
+  
+  <g-sort show="{{sortShow}}" bind:sortStyle="sortStyle"></g-sort> -->
+  <view class="content">
+    <view class="top-sort">
+      <view class="sort" bindtap='sortStart'>
+        <image class="sort-img" src="/images/construction-group/sort.png"></image>
+        <view class="sort-text">{{sort}}</view>
+      </view>
+      <view class="invitetext">想快点建群?点击“邀请”!</view>
+    </view>
+    <block wx:if="{{have}}">
+      <view class="group-list">
+        <block wx:for="{{groupList}}" wx:key="index">
+          <g-groupList group="{{item}}" bind:zhuli="zhuli" id="zhuli" fxrid="{{FXRid}}"></g-groupList>
+        </block>
+        <view class='bottom'>{{load_more}}</view>
+      </view>
+    </block>
+    <block wx:else>
+      <view class='showNoMsg'>
+        <image class="nomsg" src='/images/nomsg.png'></image>
+        <text class='notext'>未找到对应群</text>
+
+      </view>
+    </block>
+  </view>
+  <view class="jianqun">
+    <text class='text' bindtap='applyFun'>我要建群</text>
+    <button wx:if="{{!showApply}}" class='details_button' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" plain></button>
+  </view>
+  <g-sort show="{{sortShow}}" bind:sortStyle="sortStyle"></g-sort>
+</view>

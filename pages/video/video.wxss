@@ -1,0 +1,162 @@
+/* pages/video/video.wxss */
+
+page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.video {
+  height: 560rpx;
+  background: #fff;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.video {
+  /* position: fixed;
+  z-index: 9999;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: #fff; *//* padding-top: 460rpx; */
+}
+
+/* .video-box{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.video-box video{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+} */
+
+/* .content{
+  padding-top: 550rpx;
+} */
+
+.BottomBlock {
+  display: flex;
+  flex: 1;
+  overflow: auto;
+}
+
+.content .title {
+  padding: 0 32rpx;
+  font-size: 34rpx;
+  line-height: 38rpx;
+  color: #333;
+  margin-top: 32rpx;
+  font-weight: bold;
+  margin-bottom: 24rpx;
+}
+
+.content .btn {
+  padding: 0 32rpx;
+  border: 0rpx solid transparent;
+  width: 195rpx;
+  margin: 0;
+  line-height: 1;
+}
+
+.content .btn .icon {
+  width: 30rpx;
+  height: 28rpx;
+  margin-right: 15rpx;
+}
+
+.content .btn .text {
+  font-size: 30rpx;
+  color: #666;
+}
+
+.list-video {
+  border-top: solid 1px #ebebeb;
+  padding: 20rpx 0;
+}
+
+.list-video .video-info {
+  padding: 0 32rpx;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
+
+.list-video .video-info .left {
+  position: relative;
+  padding-top: 50rpx;
+}
+
+.list-video .video-info .left .icon {
+  width: 15rpx;
+  height: 22rpx;
+}
+
+.list-video .video-info .left .line {
+  position: absolute;
+  top: 82rpx;
+  left: 4px;
+  width: 1rpx;
+  height: 155rpx;
+  background: #ebebeb;
+}
+
+.list-video .video-info .right {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  padding-top: 40rpx;
+  margin-left: 32rpx;
+}
+
+.list-video .video-info .right .head {
+  width: 64rpx;
+  height: 64rpx;
+}
+
+.list-video .video-info .right .cont {
+  margin-left: 16rpx;
+}
+
+.list-video .video-info .right .cont .name {
+  color: #999;
+  font-weight: bold;
+}
+
+.list-video .video-info .right .cont .name.active {
+  color: #4284f7;
+}
+
+.list-video .video-info .right .cont .name {
+  font-size: 30rpx;
+  line-height: 38rpx;
+}
+
+.list-video .video-info .right .cont .name .text {
+  font-size: 28rpx;
+}
+
+.list-video .video-info .right .cont .company-name {
+  font-size: 28rpx;
+  line-height: 38rpx;
+  color: #999;
+  margin-top: 16rpx;
+}
+
+.list-video .video-info .right .cont .tit {
+  font-size: 24rpx;
+  color: #999;
+  line-height: 38rpx;
+  margin-top: 16rpx;
+}

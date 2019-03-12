@@ -1,0 +1,82 @@
+<!--pages/myConnection/myConnection.wxml-->
+<view class='content'>
+  <view class='search'>
+    <view class='left' bindtap='showAltFun'>
+      <text class='text'>{{showVal}}</text>
+      <image class='icon' src='/images/icon_serlect.png'></image>
+    </view>
+    <view class='right'>
+      <image class='icon' src='/images/icon_search.png'></image>
+      <input bindconfirm="inputSearch" class='search-val' placeholder='搜索联系人' confirm-type="search"></input>
+    </view>
+  </view>
+  <block wx:if="{{!showLoading}}">
+    <view class='list-info' wx:if="{{dataArr.length>0}}">
+      <view class='list-item' wx:for="{{dataArr}}" wx:key="{{index}}">
+        <view class='head-name'>
+          <view class='left-cont'>
+            <image class='head' src='{{item.avatar}}'></image>
+            <view class='name-cont'>
+              <view class='name'>{{item.real_name}}</view>
+              <view class='text'>{{item.duty}}</view>
+              <view class='text'>{{item.company}}</view>
+            </view>
+          </view>
+          <view class='right-cont'>
+            <view class='contbox' wx:if="{{item.eachother!==0}}">
+              <image class='icon' src='/images/icon_gzed.png'></image>
+              <text class='text'>相互关注</text>
+            </view>
+          </view>
+        </view>
+        <view class='bottom-cont'>
+          <view class='ul'>
+            <view class='li'>
+              <image class='icon' src='/images/icon_see.png'></image>
+              <view class='text' style='color:#4284f7'>{{item.visit_num}}访客</view>
+            </view>
+            <view class='li'>
+              <image class='icon' bindtap='zanFun' data-uid="{{item.uid}}" src="{{item.approval===0?'/images/icon_zan.png':'/images/icon_zaned.png'}}"></image>
+              <view class='text' style="color:{{item.approval===0?'#333':'#ffa103'}}">{{item.approval_num}}认可</view>
+            </view>
+            <view class='li'>
+              <image class='icon' bindtap='gzFun' data-uid="{{item.uid}}" src="{{item.follow===0?'/images/icon_gz.png':'/images/icon_gzed.png'}}"></image>
+              <view class='text' style="color:{{item.follow===0?'#333':'#ff5252'}}">{{item.follow_num}}关注</view>
+            </view>
+          </view>
+          <view class='show-msg'>
+            <view class='msg'>
+              <text class='tit'>简介：</text>
+              <text class='text'>{{item.introduce}}</text>
+            </view>
+            <view class='msg'>
+              <text class='tit'>负责：</text>
+              <text class='text'>{{item.responsible}}</text>
+            </view>
+          </view>
+          <view class='more-btn'>
+            <button class='icon-text' hover-class='none' open-type="share" data-title="Hi～我是{{item.real_name}}，很高兴认识您！" data-img="{{item.shearImg}}" data-id="{{item.uid}}">
+              <image class='icon' src='/images/icon_share.png'></image>
+              <text class='text'>分享</text>
+            </button>
+            <view class='icon-text' data-uid="{{item.uid}}" bindtap='showOtherCard'>
+              <image class='icon' src='/images/icon_xq.png'></image>
+              <text class='text'>详情</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='showNoMsg' wx:if="{{noMsg}}">
+      <image class='nomsg' src='/images/nomsg.png'></image>
+      <view class='notext'>暂无搜索记录</view>
+    </view>
+    <view class='tstext' wx:if="{{dataArr.length>0}}">{{textMsg}}</view>
+  </block>
+
+</view>
+<view class='alt' bindtap='hideAlt' wx:if="{{showAlt}}">
+  <view class='box'>
+    <view class='text' wx:for="{{selectArr}}" wx:key="{{index}}" data-type="{{item.id}}" data-val="{{item.name}}" bindtap='selectFun'>{{item.name}}</view>
+  </view>
+</view>

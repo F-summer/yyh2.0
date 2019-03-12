@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "flockList": "/components/flockList/flockList",
+    "searchHeat": "/components/searchHeat/searchHeat",
+    "g-group": "/components/addGroup/addGroup",
+    "g-zhuligroup": "/components/zhuliGroup/zhuliGroup"
+  },
+  "navigationBarTitleText": "搜索群"
+}

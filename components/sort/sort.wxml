@@ -1,0 +1,10 @@
+<!-- components/sort/sort.wxml -->
+<view class="container" catchtouchmove="true" wx:if="{{show}}" bindtap='close'>
+  <view class="contont {{showC?'contont-show':''}}">
+    <view wx:for="{{sortList}}" bindtap='sort' wx:item="item" wx:key="index">
+      <view class='list-item' data-sort="{{item}}" data-index="{{index}}">{{item}}</view>
+    </view>
+     <view class='list-item list-bottom' bindtap='close' data-sort="取消">取消</view>
+  </view>
+ 
+</view>

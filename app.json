@@ -1,0 +1,79 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/mine_group/mine_group",
+    "pages/edit/edit",
+    "pages/mine/mine",
+    "pages/community/community",
+    "pages/ence_push/ence_push",
+    "pages/video/video",
+    "pages/loginPage/loginPage",
+    "pages/live_play/live_play",
+    "pages/register/register",
+    "pages/group_desc/group_desc",
+    "pages/construction_group/construction_group",
+    "pages/successPage/successPage",
+    "pages/invitate/invitate",
+    "pages/discover/discover",
+    "pages/applyPage/applyPage",
+    "pages/searchPage/searchPage",
+    "pages/choiceFlock/choiceFlock",
+    "pages/web/web",
+    "pages/vote/vote",
+    "pages/feedback/feedback",
+    "pages/feedback_list/feedback_list",
+    "pages/pay/pay",
+    "pages/vote_1/vote",
+    "pages/vote_2/vote",
+    "pages/mycard/mycard",
+    "pages/myConnection/myConnection",
+    "pages/otherCard/otherCard",
+    "pages/login/login"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "为您精准匹配所属地区的社群入口"
+    }
+  },
+  "plugins": {
+    "tencentvideo": {
+      "version": "1.2.0",
+      "provider": "wxa75efa648b60994b"
+    }
+  },
+  "window": {
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "药友荟",
+    "backgroundTextStyle": "light",
+    "onReachBottomDistance": 60
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#4284f7",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "/images/tabBar/info_ed.png",
+        "iconPath": "/images/tabBar/info.png",
+        "pagePath": "pages/index/index",
+        "text": "发现"
+      },
+      {
+        "selectedIconPath": "/images/tabBar/zixun_ed.png",
+        "iconPath": "/images/tabBar/zixun.png",
+        "pagePath": "pages/community/community",
+        "text": "资讯"
+      },
+      {
+        "selectedIconPath": "/images/tabBar/mine.png",
+        "iconPath": "/images/tabBar/me.png",
+        "pagePath": "pages/mine/mine",
+        "text": "我的"
+      }
+    ]
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wx9f13438ac4a3f56f"
+  ]
+}

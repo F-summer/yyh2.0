@@ -1,0 +1,45 @@
+<!--pages/group_desc/group_desc.wxml-->
+<import src="/pages/template/template.wxml" />
+<template wx:if="{{onlineTier}}" is="{{onlineData.line_type == 1 ? 'onLineTierText' : 'onLineTierPic'}}" data="{{onlineData}}">
+</template>
+<view class='container'>
+  <view class='content'>
+    <image class='topimg' src='/images/group_bg.png'></image>
+    <image class='groupimg' src="{{src}}"></image>
+    <view class='group-name'>{{name}}</view>
+    <view class='group-des'>{{desc}}</view>
+    <view class='injoy-group' data-id="{{id}}" bindtap='enjoygroup'>
+      申请入群
+    </view>
+    <view class='group-list'>
+      <view class='btn' bindtap='backmenu'>回到首页</view>
+      <!-- 生成海报 部分代码 -->
+      <view class="btn fenxiang" bindtap='shearFun'>
+        分享本群
+      </view>
+      <!-- <button class="btn fenxiang" hover-class='none' open-type='share'>
+        分享本群
+      </button> -->
+
+    </view>
+  </view>
+  <!-- 进群按钮 -->
+  <view class='alert-cont' wx:if="{{showAlt}}" bindtap='headAlt'>
+    <view class='show-img'>
+      <!-- <image class='red-head' src='/images/head-red.png'></image> -->
+      <image class='img' src='/images/showImg.gif'></image>
+      <view class='go-flock-btn'>
+        <view class='top-cont'>
+          <image class='icon' src='/images/weixin.png'></image>
+          <text class='txt'>马上进群</text>
+        </view>
+        <button send-message-title="{{name}}" send-message-img="https://www.yaobc.info/images/yyh/sharecards.png" show-message-card="true" send-message-path="../index/index?id={{sendId}}" class='details_button' open-type='contact' plain>
+        </button>
+      </view>
+      <text class='text'>点击按钮后，请如上图操作马上进群</text>
+    </view>
+  </view>
+
+  <g-canvas id="canvas"></g-canvas>
+
+</view>

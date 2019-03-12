@@ -1,0 +1,128 @@
+/* components/indexAther/indexAther.wxss */
+.indexAther{
+  padding: 32rpx 32rpx;
+  background-color: #fff;
+}
+.sea-add-cont{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.city{
+  font-size: 30rpx;
+  font-weight: bold;
+	color: #333333;
+  margin-right: 24rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.city .text{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  display: block;
+  width: 89rpx;
+}
+.city .icon{
+  width: 20rpx;
+  height: 10rpx;
+  margin-left: 16rpx;
+}
+.search-cont{
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.sea-add-cont .search{
+  display: flex;
+  align-items: center;
+  width: 540rpx;
+	height: 72rpx;
+	background-color: #f4f4f4;
+	border-radius: 36rpx;
+  padding-left: 24rpx;
+}
+.sea-add-cont .search .search-icon{
+  width: 27rpx;
+  height: 28rpx;
+  margin-right: 16rpx;
+}
+.sea-add-cont .search .text{
+  font-size: 30rpx;
+	color: #d4d4d4;
+}
+.sea-add-cont .add-btn{
+  width: 134rpx;
+	height: 72rpx;
+	background-color: #ecf2fe;
+	border-radius: 36rpx;
+  font-size: 30rpx;
+	line-height: 72rpx;
+	color: #4284f7;
+  text-align: center;
+}
+.recommend-cont .tit{
+  font-size: 34rpx;
+	color: #333333;
+  display: block;
+  margin-bottom: 32rpx;
+  font-weight: bold;
+}
+.recommend-cont .fire{
+  display: block;
+  width: 22rpx;
+  height: 26rpx;
+  margin-right: 15rpx;
+}
+.recommend-cont .recommend-info{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  /* flex-wrap: nowrap;
+  vertical-align: middle;
+  white-space: nowrap;
+  overflow: hidden; */
+  width: 100%;
+}
+.recommend-cont .recommend-info .name{
+  padding: 0;
+  margin: 0;
+  font-size: 24rpx;
+	color: #333;
+  margin-right: 16rpx;
+  vertical-align: middle;
+  margin-bottom: 16rpx;
+}
+.recommend-cont .recommend-info .name::after{
+  border:none;
+}
+.recommend-cont .recommend-info .name.word{
+  display: inline-block;
+	height: 64rpx;
+	background-color: #ffffff;
+	box-shadow: 0px 2px 16px 0px 
+		rgba(0, 0, 0, 0.08);
+	border-radius: 8px;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 64rpx;
+  padding: 0 24rpx;
+	color: #8391ab;
+}
+.jianqun{
+  width: 120rpx;
+  height: 142rpx;
+  position: fixed;
+  left: 32rpx;
+  bottom: 64rpx;
+  z-index: 9999;
+}

@@ -1,0 +1,96 @@
+<!--components/flockList/flockList.wxml-->
+<view class="flocklist {{!headTop?'active':''}}">
+  <view class="select-cont {{isfilex?'active':''}}" wx:if="{{!headTop}}">
+    <view class='select-info'>
+      <view class="select-item {{cityActive?'active':''}}" bindtap='goSelectPag' data-index="0">
+        <text class="text over_hide">{{cityName.name}}</text>
+        <image class='icon' wx:if="{{cityActive}}" src='/images/select_icon_blue.png'></image>
+        <image class='icon' wx:else src='/images/select_icon.png'></image>
+      </view>
+      <view class="select-item {{showActive==1?'active':''}}" bindtap='goSelectPag' data-index="1">
+        <text class="text over_hide">{{businessName.name}}</text>
+        <image class='icon' wx:if="{{showActive==1}}" src='/images/select_icon_blue.png'></image>
+        <image class='icon' wx:else src='/images/select_icon.png'></image>
+      </view>
+      <view class="select-item {{showActive==2?'active':''}}" bindtap='goSelectPag' data-index="2">
+        <text class="text over_hide">{{themeName.name}}</text>
+        <image class='icon' wx:if="{{showActive==2}}" src='/images/select_icon_blue.png'></image>
+        <image class='icon' wx:else src='/images/select_icon.png'></image>
+      </view>
+      <!-- <navigator url='/pages/searchPage/searchPage' hover-class='none'  class='czbtn'  data-index="2">
+        <image class='icon' src='/images/icon_search1.png'></image>
+      </navigator>  -->
+      <view class='czbtn' bindtap='resetFun' data-index="2">
+        <image class='icon' src='/images/icon_reset.png'></image>
+        <!-- <text class="text">重置</text> -->
+      </view>
+    </view>
+    <!-- <view class='type-cont'>
+      <view class='flexcont' wx:for="{{peopleNumArr}}" wx:key="{{index}}">
+        <view class="type-item {{peopleNum===index?'active':''}}" bindtap='peopleFun' data-index="{{index}}">
+          {{item}}
+        </view>
+      </view>
+    </view> -->
+  </view>
+  <block wx:if="{{haveMsg&&arrLength}}">
+    <view wx:if="{{headTop}}" class='search-num'>共找到
+      <text class='num'>{{arrLength}}</text>个群</view>
+    <view class='flock-info'>
+      <view class='flock-item' wx:for="{{flockArr}}" wx:key="{{index}}">
+        <image class='flock-img' src='{{item.img}}' data-name="{{item.name}}" data-id="{{item.id}}" data-src="{{item.img}}"></image>
+        <view class='right'>
+          <view class='text-cont'>
+            <view class='name' data-name="{{item.name}}" data-id="{{item.id}}" data-src="{{item.img}}">{{item.name}}</view>
+            <text class='text'>{{item.introduce}}</text>
+          </view>
+          <form bindsubmit='addFlock' wx:if="{{item.open_type==1}}" data-name="{{item.name}}" data-id="{{item.id}}" report-submit='true' data-type="1343">
+            <button class='add-flock-btn' formType="submit"> {{item.button_name}}</button>
+          </form>
+          <form wx:if="{{item.open_type==0}}" data-name="{{item.name}}" data-id="{{item.id}}" report-submit='true' data-type="1343">
+            <button style='background:#e3edfe' class='add-flock-btn' formType="submit"> {{item.button_name}}</button>
+          </form>
+
+        </view>
+      </view>
+    </view>
+    <navigator wx:if="{{showTsBtn}}" hover-class='none' url='/pages/construction_group/construction_group' class='navText'>
+      <text class='tstext'>{{textcont}}</text>
+      <image src='/images/jt.png' class='moreBtn'></image>
+    </navigator>
+    <view wx:else class='textcont'>
+      <text class='tstext'>{{textcont}}</text>
+    </view>
+  </block>
+  <block wx:else>
+    <view wx:if="{{headTop}}" class='showNoMsg'>
+      <image class="nomsg" src='/images/nomsg.png'></image>
+      <text class='notext'>未找到对应群</text>
+      <navigator hover-class='none' class='btn-flock' url='/pages/construction_group/construction_group'>查看待建群</navigator>
+    </view>
+    <view class='showNoMsgFun' wx:else>
+      <image class="nomsg" src='/images/nomsg.png'></image>
+      <text class='notext'>未找到对应群</text>
+      <navigator hover-class='none' class='btn-flock' url='/pages/construction_group/construction_group'>查看待建群</navigator>
+    </view>
+  </block>
+</view>
+<view class='alert-cont' wx:if="{{showAlt}}" bindtap='headAlt'>
+  <view class='show-img'>
+    <!-- <image class='red-head' src='/images/head-red.png'></image> -->
+    <image class='img' src='/images/showImg.gif'></image>
+    <view class='go-flock-btn'>
+      <view class='top-cont'>
+        <image class='icon' src='/images/weixin.png'></image>
+        <text class='txt'>马上进群</text>
+      </view>
+      <form bindsubmit="formSubmit" report-submit="true">
+        <button send-message-title="{{groupname}}" send-message-img="https://www.yaobc.info/images/yyh/sharecards.png" show-message-card="true" send-message-path="../index/index?id={{sendId}}" class='details_button' open-type='contact' formType="submit" plain>
+        </button>
+      </form>
+
+    </view>
+    <text class='text'>点击按钮后，请如上图操作马上进群</text>
+  </view>
+
+</view>

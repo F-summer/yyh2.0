@@ -1,0 +1,20 @@
+<view style='bg-cont' style="position:fixed;top:9999999999999999999999999999999999rpx;">
+  <canvas  class='myCanvas' canvas-id="myCanvas"></canvas>
+</view>
+<view class='fixed-cont' bindtap='hideFun' wx:if="{{showFixed}}">
+  <view class='botom-cont'>
+    <text class='text'>分享或转发</text>
+    <view class='choose-cont'>
+      <view class='item' catchtap='haibao'>
+        <image src='/images/downImg.png' class='icon'></image>
+        <text class='wz'>生成海报分享朋友圈</text>
+      </view>
+       <button class='item' hover-class='none' data-name="shareBtn" open-type="share" plain="true" data-title="{{sendData[1]?'我正在为'+sendData[1]+'点赞':title}}" data-img="{{typeNum==1?'https://www.yaobc.info/images/yyh/bannerz.png?banben=1':'https://www.yaobc.info/images/yyh/bannerz2.png'}}">
+        <image src='/images/weixin2.png' class='icon'></image>
+        <text class='wz'>转发给好友或群</text>
+      </button>
+    </view>
+  </view>
+</view>
+
+

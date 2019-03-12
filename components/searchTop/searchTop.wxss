@@ -1,0 +1,76 @@
+/* components/searchTop/searchTop.wxss */
+.content{
+  background-color: #fff;
+  padding: 32rpx 0;
+  padding-bottom:40rpx;
+}
+.search-cont{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: 686rpx;
+	height: 72rpx;
+	background-color: #ffffff;
+	box-shadow: 0px 2rpx 16rpx 0px 
+		rgba(0, 0, 0, 0.08);
+	border-radius: 16rpx;
+  margin:0 auto;
+}
+.search-cont .left{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  position:relative;
+  width: 140rpx;
+}
+.search-cont .left::after{
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -12rpx;
+  width: 1rpx;
+	height: 24rpx;
+	background-color: #dddddd;
+}
+.search-cont .left .city{
+  font-size: 26rpx;
+	color: #333333;
+  margin-right: 10rpx;
+  display: inline-block;
+  width: 80rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.search-cont .left .icon{
+  width: 12rpx;
+  height: 6rpx;
+}
+.search-cont .right{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  position:relative;
+  flex: 1;
+}
+.search-cont .right .icon{
+  width: 28rpx;
+  height: 28rpx;
+  margin-left: 24rpx;
+}
+.search-cont .right .text{
+  font-size: 26rpx;
+	color: #d4d4d4;
+  margin-left: 16rpx;
+  background: transparent;
+  padding: 0;
+  margin-right: 5rpx;
+}
+.search-cont .right .text::after{
+  border:none;
+}

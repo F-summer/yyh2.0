@@ -1,0 +1,68 @@
+<!-- components/invitation-group.wxml -->
+<view class="container" >
+  <view class="content">
+    <view class="group-cont">
+      <image class="group-img" src="{{help_num==group.set_num?'/images/construction-group/ed.png':'/images/construction-group/ing.png'}}"></image>
+      <view class="group-out">
+        <view class="group-top">
+          <view class="group-name">{{group.name}}</view>
+          <view class="zhuli-info">
+            助力情况：
+            <view style="color:#ffa643">{{help_num}}/{{group.set_num}}</view>
+          </view>
+          <progress activeColor="#ffa643" class="progress" percent="{{percent}}" active />
+        </view>
+        <view class="group-bottom">
+          <view class="remain-time">
+            <view class="date">{{clock}}</view>
+            <view class="lastdate">后，助力结束</view>
+          </view>
+          <view class="btn-list">
+            <image class="btn-bg" src="/images/construction-group/bg.png"></image>
+            <block wx:if="{{help == 0}}">
+              <form bindsubmit="formSubmit" data-id="{{group.id}}" data-openid="{{group.open_id}}" report-submit='true'>
+                <image class="yizhuli" src='/images/construction-group/zl.png'></image>
+                <button class="zhulibtn" formType="submit" plain='true'></button>
+              </form>
+            </block>
+            <block wx:else>
+              <image class="yizhuli" src='/images/construction-group/yzl.png'></image>
+            </block>
+            <image class="yizhuli" src='/images/construction-group/yq.png'></image>
+            <button class="invitatebtn" data-id="{{group.id}}" plain='true' open-type="share" data-name="{{group.name}}" data-openid="{{group.open_id}}">
+
+            </button>
+          </view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+  <!-- <view class="remain-time">
+    <view class="icon-red"></view>
+    <view class="date">{{clock}}</view>
+  </view>
+  <view class="group-info">
+    <image class="group-img" src="{{help_num==group.set_num?'/images/construction-group/ed.png':'/images/construction-group/ing.png'}}"></image>
+    <view class="apply-info">
+      <view class="group-out">
+        <view class="group-name">{{group.name}}</view>
+        <view class="zhuli-info">助力情况：{{help_num}}/{{group.set_num}}</view>
+        <progress activeColor="#ffa643" class="progress" percent="{{percent}}" active />
+      </view>
+      <view class="btn-list">
+        <button class="invitatebtn" data-id="{{group.id}}"  open-type="share" data-name="{{group.name}}" data-openid="{{group.open_id}}">
+          邀请
+        </button>
+        <block wx:if="{{help == 0}}">
+        <form bindsubmit="formSubmit" report-submit="true">
+          <button class="zhulibtn" formType="submit" bindtap='zhuli' data-id="{{group.id}}" data-openid="{{group.open_id}}">助力</button>
+          </form>
+        </block>
+        <block wx:else>
+          <view class="yizhuli">已助力</view>
+        </block>
+      </view>
+    </view>
+  </view> -->
+</view>

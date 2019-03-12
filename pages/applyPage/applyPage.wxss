@@ -1,0 +1,111 @@
+/* pages/applyPage/applyPage.wxss */
+.type-info{
+  padding: 0 32rpx;
+  margin-bottom: 80rpx;
+}
+.go-flock-btn{
+  position: relative;
+  width: 686rpx;
+	height: 88rpx;
+	border-radius: 44rpx;
+  margin: auto;
+  overflow: hidden;
+  margin-top: 32rpx;
+  margin-bottom: 16rpx;
+}
+.go-flock-btn .top-cont{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  line-height: 88rpx;
+  font-size: 30rpx;
+	color: #ffffff;
+  background-color: #4284f7;
+}
+.go-flock-btn .top-cont::after{
+  border:none;
+}
+.go-flock-btn .top-cont .icon{
+  width: 41rpx;
+	height: 32rpx;
+  vertical-align: middle;
+  margin-right: 16rpx;
+}
+.go-flock-btn .top-cont .txt{
+  vertical-align: middle;
+}
+.go-flock-btn .details_button{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+}
+.type-info .type-item{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 114rpx;
+  border-bottom: 1rpx solid #ebebeb;
+}
+.type-info .text{
+  font-size: 30rpx;
+	color: #666666;
+}
+.type-info .txt{
+  font-size: 30rpx;
+	color: #999999;
+  vertical-align: middle;
+  margin-right: 32rpx;
+}
+.type-info .icon{
+  width: 17rpx;
+  height: 32rpx;
+  vertical-align: middle;
+}
+.altcont{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, .4)
+}
+.altcont .list-info{
+  position: absolute;
+  bottom: 0;
+  width: 750rpx;
+	height: 1099rpx;
+	background-color: #ffffff;
+	border-radius: 16rpx 16rpx 0rpx 0rpx;
+}
+.altcont .list-info .list-item{
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32rpx;
+}
+.altcont .list-info .list-item .text{
+  font-size: 30rpx;
+	color: #333333;
+}
+.altcont .list-info .list-item .icon{
+  width: 20rpx;
+  height: 14rpx;
+  display: none;
+}
+.altcont .list-info .list-item.active .text{
+  color: #4284f7;
+}
+.altcont .list-info .list-item.active .icon{
+  width: 20rpx;
+  height: 14rpx;
+  display: block;
+}

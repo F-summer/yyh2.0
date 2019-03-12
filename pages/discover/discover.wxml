@@ -1,0 +1,27 @@
+<!-- pages/discover/discover.wxml -->
+<import src="/pages/template/template.wxml" />
+<template wx:if="{{onlineTier}}" is="{{onlineData.line_type == 1 ? 'onLineTierText' : 'onLineTierPic'}}" data="{{onlineData}}">
+</template>
+<view class='container'>
+  <view class='top-screen'>
+    <view wx:for="{{choiceList}}" wx:key="index" wx:for-index='index' bindtap='choice'>
+      <view class="screen-item {{indexCho==index?'active':'normal'}}" data-ids="{{index}}">
+        {{item}}
+        <image src="{{indexCho==index?'/images/icon_select_shang.png':'/images/icon_select.png'}}" class="arrow"></image>
+      </view>
+    </view>
+  </view>
+  <view class='show-content'>
+    <block wx:if="{{indexCho==0}}">
+      <g-province bind:getProvince="getCityShow" bendi="{{bendi}}" province="{{provinceList}}" id="province"></g-province>
+    </block>
+    <block wx:if="{{indexCho==1}}">
+      <g-theme list="{{businessList}}" comtype="business" bind:name="getBusinessName"></g-theme>
+    </block>
+    <block wx:if="{{indexCho==2}}">
+      <g-theme list="{{themeList}}" comtype="theme" bind:name="getThemeName"></g-theme>
+    </block>
+  </view>
+  
+
+</view>

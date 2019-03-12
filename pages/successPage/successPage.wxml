@@ -1,0 +1,49 @@
+<!-- pages/successPage/successPage.wxml -->
+<import src="/pages/template/template.wxml" />
+<template wx:if="{{onlineTier}}" is="{{onlineData.line_type == 1 ? 'onLineTierText' : 'onLineTierPic'}}" data="{{onlineData}}">
+</template>
+<view class="container">
+  <view class="top">
+    <image class="top" src="/images/success/top.png"></image>
+  </view>
+  <view class="content">
+    <view class="group-info">
+      <view class="group">
+        <view class="group-begin">
+          <image class="success" src="/images/success_img.png"></image>
+          <view class="">
+            <view class="group-name">{{objInfo.room_name}}</view>
+            <!-- <view class="group-des">描述描述描述</view> -->
+          </view>
+        </view>
+        <image class="douhao" src="/images/success/douhao.png"></image>
+      </view>
+      <image class="btn" data-id="{{objInfo.id}}" src="/images/success/btn.png" bindtap='enjoyGroup'></image>
+    </view>
+  </view>
+  <view class='group-content scrollInfo'>
+    <view class="zhulijilu">助力记录</view>
+    <g-scrollInfo list='{{userInfoList}}' lenth="{{lenth}}"></g-scrollInfo>
+  </view>
+  <view class="bottom">
+    <image class="bottom" src="/images/success/bottom.png"></image>
+  </view>
+  <!-- 进群按钮 -->
+  <view class='alert-cont' wx:if="{{showAlt}}" bindtap='headAlt'>
+    <view class='show-img'>
+      <!-- <image class='red-head' src='/images/head-red.png'></image> -->
+      <image class='img' src='/images/showImg.gif'></image>
+      <view class='go-flock-btn'>
+        <view class='top-cont'>
+          <image class='icon' src='/images/weixin.png'></image>
+          <text class='txt'>马上进群</text>
+        </view>
+        <button send-message-title="{{objInfo.room_name}}" send-message-img="https://www.yaobc.info/images/yyh/sharecards.png" show-message-card="true" send-message-path="../index/index?id={{sendId}}" class='details_button' open-type='contact' plain>
+        </button>
+      </view>
+      <text class='text'>点击按钮后，请如上图操作马上进群</text>
+    </view>
+  </view>
+
+
+</view>

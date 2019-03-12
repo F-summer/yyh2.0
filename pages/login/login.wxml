@@ -1,0 +1,44 @@
+<!--pages/login/login.wxml-->
+<view class='login-cont'>
+  <image class='img' src="/images/logo.png"></image>
+  <view class='list'>
+    <text class='text'>欢迎来到药友荟</text>
+    <text class='msg'>找关键人脉、找业务商机、找靠谱信息</text>
+    <view class='item-cont'>
+      <view class='item'>
+        <image class='yes' src="{{showloging?'/images/icon_yes.png':'/images/icon_yesed.png'}}"></image>
+        <view class='txt-con'>
+          <view class='tit'>获取您的公开信息（昵称、头像等）</view>
+          <view class='txt'>方便您使用药友荟全部功能</view>
+        </view>
+      </view>
+      <view class='item'>
+        <image class='yes' src="{{showAddress?'/images/icon_yes.png':'/images/icon_yesed.png'}}"></image>
+        <view class='txt-con'>
+          <view class='tit'>获取您的手机号码</view>
+          <view class='txt'>应国家法律要求，需获取您手机号码</view>
+        </view>
+      </view>
+      <view class='item'>
+        <image class='yes' src="{{!showBack?'/images/icon_yes.png':'/images/icon_yesed.png'}}"></image>
+        <view class='txt-con'>
+          <view class='tit'>获取您的地理位置信息</view>
+          <view class='txt'>为您精准匹配所属地区的社群入口</view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+  <view>
+    <button class='btn' wx:if="{{showloging}}" open-type="getUserInfo" bindgetuserinfo='getUserInfo' hover-class='none'>
+      第一步，授权公开信息
+    </button>
+    <button class='btn' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" wx:if="{{showPhone}}">第二步，授权手机号码</button>
+    <button class='btn' bindtap='getAdderss' wx:if="{{showAddressBtn}}">第三步，授权地理位置信息</button>
+    <button class='btn' wx:if="{{showBack}}" bindtap='backFun'>返回首页</button>
+  </view>
+    <view class='more'>
+    <text class='text'>药友荟不会将您的信息提供给任何第三方</text>
+    <text class='text'>更不会向您发送垃圾短息造成骚扰，仅用于药友荟为您提供服务</text>
+  </view>
+</view>

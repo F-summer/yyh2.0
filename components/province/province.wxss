@@ -1,0 +1,74 @@
+/* components/province/province.wxss */
+
+.container {
+  width: 100%;
+  height: 100%;
+  background-color: #f4f4f4;
+  font-size: 30rpx;
+  position: fixed;
+  bottom:0;
+  z-index: 100000;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+.bendi{
+  height: 88rpx;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding-left: 32rpx;
+  border-bottom: 1px solid #f4f4f4;
+  font-size: 30rpx;
+  color: #d4d4d4;
+}
+.bendi image{
+  width: 32rpx;
+  height: 32rpx;
+  margin-left:20rpx; 
+}
+.grey {
+  height: 32rpx;
+  line-height: 32rpx;
+  padding-left: 32rpx;
+  font-size: 22rpx;
+  color: #999;
+}
+.white{
+  height: 88rpx;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding-left: 32rpx;
+  color: #333;
+  border-bottom: 1px solid #f4f4f4;
+  font-size: 30rpx;
+}
+.right{
+ padding: 3px;
+  position: fixed;
+  top:130rpx;
+  right: 30rpx;
+  color: #333;
+  z-index: 333;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0rpx 1rpx 20rpx  2rpx rgba(1, 1, 1, 0.1);
+}
+.letter-item{
+  padding: 3px;
+  text-align: center;
+}
+.view-out{
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  background-color: #fff;
+}
+.close{
+  padding: 32rpx;
+  width: 28rpx;
+  height: 28rpx;
+}

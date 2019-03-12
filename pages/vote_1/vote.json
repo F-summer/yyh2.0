@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "纪念“改革开放40年”为医药行业点赞",
+  "backgroundColor": "#cb3326",
+  "navigationBarBackgroundColor": "#cb3326",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "canvasEle": "/components/canvas/canvas"
+  }
+}

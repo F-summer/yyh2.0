@@ -1,0 +1,39 @@
+<!--pages/video/video.wxml-->
+<import src="/pages/template/template.wxml" />
+<template wx:if="{{onlineTier}}" is="{{onlineData.line_type == 1 ? 'onLineTierText' : 'onLineTierPic'}}" data="{{onlineData}}">
+</template>
+<view class='content'>
+  <view class='video' catchtouchmove='true'>
+    <video autoplay="false" poster="https://www.yaobc.info/images/yyh/livebg.png" id="txv0" src='http://1257464291.vod2.myqcloud.com/d106602bvodcq1257464291/9452a99b5285890783408895319/zXjJhR6JUqAA.mp4' style="width:100%;height:420rpx" bindtimeupdate="onTimeUpdate" custom-cache="{{false}}" bindplay="statusFun" controls bindpause="statusmoreFun"></video>
+    <!-- <txv-video class='video-box' catchtouchmove='true' vid="{{vid}}" width="{{width}}" height="{{height}}" playerid="txv0" autoplay="{{autoplay}}" bindtimeupdate="onTimeUpdate" controls>
+    </txv-video> -->
+    <view class='title'>第80届全国药品交易会行业领袖专访回放</view>
+    <form catchsubmit="shareFun" report-submit='true'>
+      <button class='item btn' hover-class='none' data-name="shareBtn" open-type="share" plain="true" data-title="第80届全国药品交易会行业领袖专访回放" formType="submit" data-img='https://www.yaobc.info/images/yyh/bannerhf.png'>
+        <image src='/images/share.png' class='icon'></image>
+        <text class='text'>分享</text>
+      </button>
+    </form>
+  </view>
+  <view class="BottomBlock">
+     <scroll-view scroll-y="true" class='list-video'>
+    <view class='video-info' bindtap='changPlay' data-id="{{index}}" wx:for="{{listArr}}" data-time="{{item.start}}" wx:key="{{index}}">
+      <view class="left {{playingid==index?'active':''}}">
+        <image class='icon' src="{{playingid==index?'/images/played.png':'/images/play.png'}}"></image>
+        <view class='line'></view>
+      </view>
+      <view class='right'>
+        <image class='head' src='{{item.url}}'></image>
+        <view class='cont'>
+          <view class="name {{playingid==index?'active':''}}">{{item.name}}
+            <text class='text'>{{item.zhiwei}}</text>
+          </view>
+          <view class='company-name'>{{item.complay}}</view>
+          <view class='tit'>{{item.title}}</view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  </view>
+  <!-- <view class='' bindtap='timeFun'>快进</view> -->
+</view>

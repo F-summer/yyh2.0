@@ -1,0 +1,63 @@
+<!--pages/applyPage/applyPage.wxml-->
+<import src="/pages/template/template.wxml" />
+<template wx:if="{{onlineTier}}" is="{{onlineData.line_type == 1 ? 'onLineTierText' : 'onLineTierPic'}}" data="{{onlineData}}">
+</template>
+<view class='applycont'>
+  <view class='type-info'>
+    <view class='type-item' bindtap='goSelectPag' data-index="0">
+      <text class='text'>地区</text>
+      <view class="right">
+        <text class="txt">{{cityName.name}}</text>
+        <image class='icon' src='/images/more.png'></image>
+      </view>
+    </view>
+    <view wx:if="{{typenum==0}}" class='type-item' bindtap='showAltFun' data-index="1">
+      <text class='text'>业务</text>
+      <view class="right">
+        <text class="txt">{{businessName.name}}</text>
+        <image class='icon' src='/images/more.png'></image>
+      </view>
+    </view>
+    <view wx:else class='type-item' bindtap='showAltFun'>
+      <text class='text'>主题</text>
+      <view class="right">
+        <text class="txt">{{themeName.name}}</text>
+        <image class='icon' src='/images/more.png'></image>
+      </view>
+    </view>
+  </view>
+  <view class='add-ben' wx:if="{{showApply}}">
+    <view class='go-flock-btn'>
+      <form bindsubmit="testFun" report-submit='true'>
+        <button hover-class='none' formType="submit" class='top-cont'>
+          <image class='icon' src='/images/weixin.png'></image>
+          <text class='txt'>申请建群</text>
+        </button>
+      </form>
+
+    </view>
+  </view>
+</view>
+<view class='altcont' wx:if="{{showAlt}}" bindtap='hideAltFun'>
+  <scroll-view class='list-info' scroll-y="true">
+    <view class="list-item {{typeindex===index?'active':''}}" bindtap='getTypeFun' wx:for="{{typeArr}}" wx:key="{{index}}" data-id="{{item.id}}" data-index="{{index}}" data-name="{{item.name}}">
+      <view class='text'>
+        {{item.name}}
+      </view>
+      <image class='icon' src="/images/yes.png"></image>
+    </view>
+  </scroll-view>
+</view>
+<view class='altcont' wx:if="{{showThem}}" bindtap='hideAltFun'>
+  <scroll-view class='list-info' scroll-y="true">
+    <view class="list-item {{typeindexT===index?'active':''}}" bindtap='getTypeFun' wx:for="{{themArr}}" wx:key="{{index}}" data-id="{{item.id}}" data-index="{{index}}" data-name="{{item.name}}">
+      <view class='text'>
+        {{item.name}}
+      </view>
+      <image class='icon' src="/images/yes.png"></image>
+    </view>
+  </scroll-view>
+</view>
+<!-- 省份 -->
+<g-province bind:getProvince="getCityShow" bendi="{{bendi}}" provinceShow="{{provinceShow}}" id="province"></g-province>
+<g-city cityShow="{{cityShow}}" cityList="{{cityList}}" bind:city="returnCity"></g-city>

@@ -1,0 +1,48 @@
+/* pages/discover/discover.wxss */
+.container {
+  display: flex;
+  flex-direction: column;
+  padding-top:100rpx;
+}
+
+.top-screen {
+  width: 750rpx;
+  height: 100rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 30rpx;
+  color: #333;
+  border-bottom: 2px solid #f4f4f4;
+  position: fixed;
+   top:0rpx; 
+  z-index: 4444;
+}
+
+
+.arrow {
+  width: 18rpx;
+  height: 10rpx;
+}
+
+.screen-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.active {
+  color: #2086ff;
+}
+
+.normal {
+  color: #333;
+}
+
+.screen-item image {
+  margin-left: 20rpx;
+}

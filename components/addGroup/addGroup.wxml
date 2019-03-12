@@ -1,0 +1,189 @@
+<!--pages/group_desc/group_desc.wxml-->
+<import src="../../components/slotMachine/slotMachine.wxml" />
+
+<!-- <view style='bg-cont' style="position:fixed;top:9999999999999999999999999999999999rpx;">
+  <canvas class='myCanvas' canvas-id="myCanvas"></canvas>
+</view> -->
+<view class='container' wx:if="{{groupShow}}" catchtouchmove='{{true}}'>
+  <!-- 整体背景 -->
+  <view class='content' wx:if="{{content}}">
+    <view class='top-card'>
+      <image class='close' bindtap='backmenu' src='/images/addGroupbg_close.png'></image>
+      <!-- <view class='guize'>
+          <view class='floatleft' bindtap='zhuliruler'>活动规则</view>
+          <view class='floatright' bindtap='ruqun'>社群规则</view>
+        </view> -->
+      <image class='groupimg' src="{{src}}"></image>
+      <view class='group-name-out'>
+        <text class='group-name'>{{name}}</text>
+        <view class='group-des'>{{desc}}</view>
+      </view>
+    </view>
+    <image src='/images/jiange.png' class='jiange'></image>
+    <view class='bottom-card'>
+      <view wx:if="{{zhulizhong}}">
+        <view class='zhuliqingkuang zhuliqingkuangT'>已有
+          <text style="color:#4284f7">{{hasHelp}}</text>个好友帮你助力</view>
+        <view class='zhuliqingkuang'>还差
+          <text style="color:#ff5252">{{needHelp}}</text>个好友助力入群，求助攻</view>
+      </view>
+      <view wx:if="{{success}}">
+        <view class='zhuliqingkuang'>您已助力成功，立即入群</view>
+      </view>
+      <view class='shenqinged' wx:if="{{shenqinged}}">
+        <view class='shibie'>
+          <image src="/images/erweima.jpg" class='erweima'></image>
+          <view class='zhiwen'>
+            <image src='/images/zhiwen.png'></image>
+            <text>微信扫码或长按识别小程序码查看动态</text>
+          </view>
+        </view>
+        <view class='zhuliqingkuang'>申请成功，快来喊好友一起助力吧！</view>
+      </view>
+
+      <block wx:if="{{zhulizhong}}">
+        <view class='listT'>
+          <block wx:for="{{imgList}}" wx:key="index">
+            <image class='head' src="{{item.head_img}}"></image>
+          </block>
+        </view>
+      </block>
+      <block wx:if="{{jieshu || success}}">
+        <view class='tiger'>
+          <view class='order'>{{showText}}</view>
+          <template is="slotMachine" data="{{...machine}}"></template>
+          <view class='tip'>tips：您加群时需要输入入群口令，请牢记！</view>
+        </view>
+      </block>
+      <!-- 立即加群 -->
+      <view wx:if="{{jieshu}}">
+        <form bindsubmit="addFlock" wx:if="{{showEnjoyBtn}}" report-submit="true" data-name="{{name}}" data-id="{{groupid}}" data-type="1347">
+          <button open-type='contact' send-message-title="{{name}}" send-message-img="https://www.yaobc.info/images/yyh/sharecards.png" hover-class="none" show-message-card="true" send-message-path="../index/index?id={{groupid}}" open-type='contact' formType="submit"
+            class='injoy-group' formType="submit">输入口令，马上进群
+          </button>
+        </form>
+        <view wx:if="{{!showEnjoyBtn}}"  class='injoy-group'>口令生成中...</view>
+        <view class='group-list'>
+          <view class='btn-bom'>
+            <form bindsubmit="addGroupType" report-submit='true' data-id="{{groupid}}" data-type="1345">
+              <button open-type='share' class='btnS btn_item' data-id="{{groupid}}" formType="submit" data-kind="group">
+                <view>
+                  <image class='wx' src='/images/wxicon.png'></image>分享好友</view>
+              </button>
+            </form>
+            <view class='sx'></view>
+            <form bindsubmit="addGroupType" report-submit='true' data-id="{{groupid}}" data-type="1346">
+              <button class='btnS fenxiang btn_item' formType="submit" data-id="{{groupid}}" data-type="1346" data-kind="group" bindtap='haibao'>
+                <view>
+                  <image class="xc" src='/images/friend.png'></image>保存到相册</view>
+              </button>
+            </form>
+          </view>
+
+        </view>
+      </view>
+      <!-- 助力成功立即加群 -->
+      <view wx:if="{{success}}">
+        <form bindsubmit="addFlock" data-type="1347" report-submit="true" data-name="{{name}}" data-id="{{groupid}}">
+          <button send-message-title="{{name}}" send-message-img="https://www.yaobc.info/images/yyh/sharecards.png" hover-class="none" show-message-card="true" send-message-path="../index/index?id={{groupid}}" class='injoy-groupT' open-type='contact' formType="submit">输入口令，马上进群
+          </button>
+        </form>
+        <view class='group-list'>
+          <form bindsubmit="addGroupType" report-submit='true' data-id="{{groupid}}" data-type="1345">
+            <button open-type='share' class='btnT' data-id="{{groupid}}" formType="submit" data-kind="group">分享给好友</button>
+          </form>
+        </view>
+      </view>
+      <!-- 申请入群 -->
+      <view wx:if="{{shenqing}}">
+        <form bindsubmit="addGroupType" data-allow='allow' report-submit='true' data-id="{{groupid}}" data-type="1344" data-total="{{total}}">
+          <button hover-class='none' bindtap='shenqingruqun' formType="submit" class='injoy-group'>
+            申请入群
+          </button>
+        </form>
+        <block wx:if="{{allow}}">
+          <view class='btn-bom'>
+            <form bindsubmit="addGroupType" data-allow='allowShow' report-submit='true' data-id="{{groupid}}" data-type="1345">
+              <button open-type='share' class='btnS' formType="submit" data-id="{{groupid}}" data-type="1345" data-kind="zhuli" data-total="{{total}}">
+                <view>
+                  <image class='wx' src='/images/wxicon.png'></image>分享好友</view>
+              </button>
+            </form>
+            <view class='sx'></view>
+            <form bindsubmit="addGroupType" data-allow='allowShow' report-submit='true' data-id="{{groupid}}" data-type="1346">
+              <button class='btnS fenxiang' formType="submit" data-id="{{groupid}}" data-type="1345" data-kind="zhuli" bindtap='haibao'>
+                <view>
+                  <image class="xc" src='/images/friend.png'></image>保存到相册</view>
+              </button>
+            </form>
+          </view>
+        </block>
+        <block wx:else>
+          <view class='btn-bom'>
+            <view class='btnS btn_item'>
+              <image class='wx' src='/images/wxicon.png'></image>分享好友</view>
+            <view class='sx'></view>
+            <view class='btnS btn_item'>
+              <image class="xc" src='/images/friend.png'></image>保存到相册</view>
+          </view>
+        </block>
+      </view>
+      <!-- 助力中 -->
+      <view wx:if="{{zhulizhong}}">
+        <view class='group-list btn-bom'>
+          <form bindsubmit="addGroupType" report-submit='true' data-id="{{groupid}}" data-type="1345">
+            <button open-type='share' class='btnS btn_item' formType="submit" data-id="{{groupid}}" data-kind="zhuli" data-total="{{total}}">
+              <view>
+                <image class='wx' src='/images/wxicon.png'></image>分享好友</view>
+            </button>
+          </form>
+          <view class='sx'></view>
+          <form bindsubmit="addGroupType" report-submit='true' data-id="{{groupid}}" data-type="1346">
+            <button open-type='share' class='btnS btn_item' data-id="{{groupid}}" formType="submit" data-kind="group">
+              <view>
+                <image class="xc" src='/images/friend.png'></image>保存到相册</view>
+            </button>
+          </form>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+
+
+
+  <view class='ruqunruler' wx:if="{{rulers}}">
+    <view class='ruler-title'>药友荟社群规则</view>
+    <scroll-view scroll-y class='ruler-content'>
+      <view class='ruler-item ruler-itemT' style='font-weight: 550;'>在这里，这些行为将受到欢迎：</view>
+      <view class='ruler-item'> 1、分享信息；</view>
+      <view class='ruler-item'> 2、积极寻求行业帮助；</view>
+      <view class='ruler-item'> 3、对接商务信息。</view>
+      <view class='ruler-item ruler-itemT' style='font-weight: 550;'>在这里，这些行为将不受欢迎：</view>
+      <view class='ruler-item'> 1、推送广告信息（包含产品推介）；</view>
+      <view class='ruler-item'> 2、推送带有二维码的图片；</view>
+      <view class='ruler-item'> 3、侮辱群内成员；</view>
+      <view class='ruler-item'> 4、邀请其他用户入群（若需进群，请从药友荟入群）；</view>
+      <view class='ruler-item'> 5、不符合法律规定的内容；</view>
+      <view class='ruler-item'> 6、修改群名 若有疑问，请添加群管理员（微信群第1个用户）。
+      </view>
+
+    </scroll-view>
+    <view class='know' bindtap='know'>我知道了</view>
+  </view>
+
+  <view class='ruqunruler' wx:if="{{zhulirulers}}">
+    <view class='ruler-title'>好友助力入群规则</view>
+    <scroll-view scroll-y class='ruler-content'>
+      <view class='ruler-item'>1、邀请好友助力，达到助力人数，即可入群；</view>
+      <view class='ruler-item'>2、每个用户仅可为一名好友助力一次。同一设备、微信号视为同一用户；</view>
+      <view class='ruler-item'>3、若发现用户存在虚假用户助力等违规行为，平台有权判定助力失败；</view>
+      <view class='ruler-item'>4、为保障用户权益，用户信息不会被公开泄漏；</view>
+      <view class='ruler-item'>5、药友荟可在法律法规允许范围内对本次活动规则解释并做适当修改。</view>
+
+    </scroll-view>
+    <view class='know' bindtap='know'>我知道了</view>
+  </view>
+
+</view>

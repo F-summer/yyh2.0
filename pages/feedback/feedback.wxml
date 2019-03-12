@@ -1,0 +1,52 @@
+<!--pages/feedback/feedback.wxml-->
+<import src="/pages/template/template.wxml" />
+<template wx:if="{{onlineTier}}" is="{{onlineData.line_type == 1 ? 'onLineTierText' : 'onLineTierPic'}}" data="{{onlineData}}">
+</template>
+<view class='content'>
+  <view class='top'>
+    <view class='left'>选择反馈类型</view>
+    <view class='right' bindtap='showAltFun'>
+      <text class='text'>{{textType}}</text>
+      <image class='icon' src='/images/more.png'></image>
+    </view>
+  </view>
+  <view class='textarea-box'>
+    <view class='title'>补充说明<text class='ts'>（最多200文字）</text></view>
+    <view class='textarea-cont'>
+      <textarea disabled="{{disabledType}}" bindblur='textareaFun' maxlength="200" class='textarea' placeholder='请输入补充说明，最少十个字'></textarea>
+    </view>
+  </view>
+  <view class='img-up-cont'>
+    <view class='text'>上传图片
+      <text class='txt'>(最多上传8张）</text>
+    </view>
+    <view class='img-info'>
+      <view wx:if="{{imgArr.length>0}}" class='img-item' wx:for="{{imgArr}}" wx:key="{{index}}">
+        <image class='img' src='{{item.src}}'></image>
+        <image class='del-btn' bindtap='delImgFun' data-index="{{index}}" src='/images/img_del.png'></image>
+      </view>
+      <view class='img-item' wx:if="{{imgArr.length<8}}">
+        <image class='img' src='/images/img_add.png'></image>
+        <button class='img-add-btn' hover-class='none' type="default" size="mini" data-index="{{index}}" bindtap='chooseimage'></button>
+      </view>
+    </view>
+  </view>
+  <view class='bottom'>
+    <view class='btn list-btn' bindtap='feedbackList'>反馈记录</view>
+    <view wx:if="{{okBtn}}" class="btn send-btn active" >
+    <text class='text' bindtap='sendDataFun'>提交反馈</text>
+    <button wx:if="{{showPhonebtn}}" class='details_button' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" plain></button>
+    </view>
+    <view wx:else class="btn send-btn">提交反馈</view>
+  </view>
+  <view class='alt' catchtouchmove='true' catchtap='hideAltFun' wx:if="{{showalt}}">
+    <view class='alt-info'>
+      <view class='tit'>
+        请选择反馈类型
+      </view>
+      <view wx:for="{{altArr}}" data-id="{{item.id}}" data-name="{{item.name}}" wx:key="{{index}}" bindtap='selectFun' class='alt-item'>
+        {{item.name}}
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,20 @@
+<!--pages/choiceFlock/choiceFlock.wxml-->
+<import src="/pages/template/template.wxml" />
+<template wx:if="{{onlineTier}}" is="{{onlineData.line_type == 1 ? 'onLineTierText' : 'onLineTierPic'}}" data="{{onlineData}}">
+</template>
+<view class='content'>
+  <navigator class='choice-info' hover-class="none" url='/pages/applyPage/applyPage?type=0'>
+    <image class='icon' src='/images/icon_choice_1.png'></image>
+    <view class='text-cont'>
+      <text class='title'>我要建“业务群”</text>
+      <text class='text'>按业务地域划分，限制区域，仅可以建立本省份微信群（适用于省内业务交流）</text>
+    </view>
+  </navigator>
+  <navigator class='choice-info down' hover-class="none" url='/pages/applyPage/applyPage?type=1'>
+    <image class='icon' src='/images/icon_choice_2.png'></image>
+    <view class='text-cont'>
+      <text class='title'>我要建“主题群”</text>
+      <text class='text'>按话题主题区分，不限制区域，可以建立全国微信群（适用于话题讨论）</text>
+    </view>
+  </navigator>
+</view>

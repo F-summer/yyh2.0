@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "g-canvas": "/components/registerCanvas/registerCanvas"
+  }
+}

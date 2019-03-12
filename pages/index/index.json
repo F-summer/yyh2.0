@@ -1,0 +1,17 @@
+{
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "indexAther": "/components/indexAther/indexAther",
+    "flockList": "/components/flockList/flockList",
+    "carousel": "/components/carousel/carousel",
+    "searchTop": "/components/searchTop/searchTop",
+    "g-theme": "/components/theme/theme",
+    "g-city": "/components/city/city",
+    "g-province": "/components/province/province",
+    "g-group": "/components/addGroup/addGroup",
+    "g-zhuligroup": "/components/zhuliGroup/zhuliGroup",
+    "login": "/components/login/login"
+  },
+  "navigationBarTitleText": "发现",
+  "backgroundColor": "#f4f4f4"
+}

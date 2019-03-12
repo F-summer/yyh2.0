@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "g-city": "/components/city/city",
+    "g-province": "/components/province/province"
+  },
+  "navigationBarTitleText": "申请建群"
+}

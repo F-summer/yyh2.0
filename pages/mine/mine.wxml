@@ -1,0 +1,82 @@
+<view class="container">
+  <view class='content'>
+    <view class="content-top">
+      <view class='user'>
+        <image class='avatar' src='{{avatarUrl}}'></image>
+        <view class='user-info'>
+          <view class='user-name'>{{nickName}}
+            <!-- <image class='level' src="/images/mine/level.png"></image> -->
+          </view>
+          <view class='user-zhiwei'>{{numobj.duty?numobj.duty:'暂未填写内容'}}</view>
+          <view class='user-zhiwei'>{{numobj.company?numobj.company:'暂未填写内容'}}</view>
+        </view>
+      </view>
+      <navigator url="{{numobj.status==1?'/pages/mycard/mycard':'/pages/edit/edit'}}" class='minpian'>查看我的名片</navigator> 
+    </view>
+    <view class="num-info">
+      <view class='num-des'>
+        <text class='number'>{{numobj.visit_num?numobj.visit_num:0}}</text>
+        <text class='desc'>访客</text>
+      </view>
+      <view class='num-des'>
+        <text class='number'>{{numobj.approval_num?numobj.approval_num:0}}</text>
+        <text class='desc'>认可</text>
+      </view>
+      <view class='num-des'>
+        <text class='number'>{{numobj.follow_num?numobj.follow_num:0}}</text>
+        <text class='desc'>关注</text>
+      </view>
+    </view>
+    <view class='jiange'></view>
+    <!-- <view class='money'>
+      <view class='money-item one'>
+        <image src="/images/mine/money.png"></image>余额：0
+      </view>
+      <view class='money-item' bindtap='getMoney'>
+        <image src="/images/mine/package.png"></image>提现</view>
+    </view>
+    <view class='jiange'></view> -->
+    <view class='list-item' bindtap='mineGroup'>
+      <view class='item-desc'>
+        <image style="width: 40rpx;height: 33rpx;margin-right:20rpx;" src='/images/mine/group.png'></image>
+        我的社群
+      </view>
+      <image class='arrow' src='/images/mine/arrow.png'></image>
+    </view>
+    <view class='list-item'  bindtap='connectionFun'>
+      <view class='item-desc'>
+        <image style="width: 36rpx;height: 40rpx;margin-right:20rpx;" src='/images/mine/people.png'></image>
+        我的人脉
+      </view>
+      <image class='arrow' src='/images/mine/arrow.png'></image>
+    </view>
+    <view class='jiange'></view>
+    <button class='list-item' open-type='share'>
+      <view class='item-desc'>
+        <image style="width: 38rpx;height: 38rpx;margin-right:20rpx;" src='/images/mine/share.png'></image>
+        分享小程序
+      </view>
+      <image class='arrow' src='/images/mine/arrow.png'></image>
+    </button>
+    <view class='list-item' bindtap='yijian'>
+      <view class='item-desc'>
+        <image style="width: 36rpx;height: 36rpx;margin-right:20rpx;" src='/images/mine/fankui.png'></image>
+        意见反馈
+      </view>
+      <image class='arrow' src='/images/mine/arrow.png'></image>
+    </view>
+  </view>
+  <!-- 遮罩层 -->
+  <!-- <view class='zhezhao'>
+    <view class='zhezhao-out'>
+      <view class='zhezhao-tishi'>温馨提示</view>
+      <view class='zhezhao-content'>暂时没有维护您的名片，请尽快维护</view>
+      <view class='zhezhao-btnlist'>
+        <view>稍后维护</view>
+        <view class='zhezhao-btntwo'>马上维护</view>
+      </view>
+    </view>
+  </view> -->
+  <!-- 遮罩层 -->
+
+</view>

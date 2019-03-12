@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "纪念“改革开放40年”第80届全国药品交易会标杆企业评选",
+  "backgroundColor": "#2c7fff",
+  "navigationBarBackgroundColor": "#2c7fff",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "canvasEle": "/components/canvas/canvas"
+  }
+}

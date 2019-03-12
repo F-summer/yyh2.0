@@ -1,0 +1,191 @@
+/* pages/register/register.wxss */
+
+.container {
+  width: 750rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #478dff;
+  overflow-x: hidden;
+}
+
+.img {
+  width: 750rpx;
+  height: 340rpx;
+}
+
+.part {
+  width: 700rpx;
+  padding: 20rpx 25rpx;
+  background-color: #fff;
+  margin: 25rpx;
+  border-radius: 8rpx;
+}
+
+.form-item {
+  width: 100%;
+  height: 60rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 20rpx 0rpx;
+}
+
+label {
+  width: 162rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  text-align: left;
+  color: #666;
+}
+
+input {
+  width: 450rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  color: #333;
+  font-weight: 550;
+  border-radius: 8rpx;
+  margin-right: 20rpx;
+  border: 1rpx solid #ebebeb;
+  padding-left: 10rpx;
+}
+
+.placeholder {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.xing {
+  width: 50rpx;
+  color: red;
+}
+
+.label {
+  width: 100%;
+  text-align: left;
+  font-size: 30rpx;
+  color: #666;
+  margin-bottom: 10rpx;
+}
+
+.yijian {
+  margin-bottom: 20rpx;
+}
+
+.radio-groupT {
+  width: 100%;
+  padding-left: 310rpx;
+}
+
+.title {
+  margin: 40rpx 0rpx;
+  line-height: 50rpx;
+  /* padding: 0rpx 20rpx; */
+}
+
+textarea {
+  width: 630rpx;
+  border-radius: 8rpx;
+  border: 1rpx solid #ebebeb;
+  height: 200rpx;
+  padding: 10rpx;
+}
+
+.more {
+  width: 400rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  background-color: #478dff;
+  color: #fff;
+  font-size: 30rpx;
+  border-radius: 8rpx;
+  margin: 20rpx 100rpx;
+}
+
+.form-itemT {
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 20rpx 0rpx;
+}
+
+.submit {
+  width: 700rpx;
+  color: #478dff;
+  margin-bottom: 20rpx;
+}
+
+.labelT {
+  font-size: 30rpx;
+  color: #666;
+}
+
+.md {
+  font-size: 30rpx;
+  color: #478dff;
+  margin: 20rpx 20rpx 20rpx 50rpx;
+  line-height: 45rpx;
+  display: flex;
+  align-items: center;
+}
+.margin{
+  margin-right: 20rpx;
+}
+radio .wx-radio-input {
+  /* 自定义样式.... */
+  height: 25rpx;
+  width: 25rpx;
+  margin-top: -4rpx;
+  border-radius: 50%;
+  border: 2rpx solid #999;
+  background: transparent;
+}
+
+radio-group label {
+  margin-right: 20rpx;
+  font-size: 24rpx;
+}
+
+checkbox .wx-checkbox-input {
+  border-radius: 3rpx;
+  height: 30rpx;
+  width: 30rpx;
+  margin-top: -6rpx;
+}
+
+
+
+.zhezhao {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 33333;
+}
+
+.zhezhao-content {
+  width: 600rpx;
+  height: 900rpx;
+  padding: 20rpx 0rpx;
+  background-color: #fff;
+  border-radius: 16rpx;
+}
+
+.scroll-item {
+  font-size: 30rpx;
+  color: #333;
+  height: 45rpx;
+  margin: 30rpx 0rpx;
+  text-align: center;
+  line-height: 45rpx;
+}

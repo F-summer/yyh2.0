@@ -1,0 +1,90 @@
+<!--pages/group_desc/group_desc.wxml-->
+<!--pages/group_desc/group_desc.wxml-->
+<view style='bg-cont' style="position:fixed;top:9999999999999999999999999999999999rpx;">
+  <canvas class='myCanvas' canvas-id="myCanvas"></canvas>
+</view>
+<view class='container' wx:if="{{zhuliGroupShow}}" catchtouchmove='{{true}}'>
+  <!-- 整体背景 -->
+  <view class='content' wx:if="{{content}}">
+    <image class='close' bindtap='backmenu' src='/images/addGroupbg_close.png'></image>
+    <!-- <view class='guize'>
+      <view class='floatleft' bindtap='zhuliruler'>活动规则</view>
+      <view class='floatright' bindtap='ruqun'>社群规则</view>
+    </view> -->
+    <view class='top-card'>
+      <image class='groupimg' src="{{src}}"></image>
+      <view class='group-name-out'>
+        <view class='group-name'>{{name}}</view>
+        <view class='group-des'>{{desc}}</view>
+      </view>
+    </view>
+    <image src='/images/jiange.png' class='jiange'></image>
+    <view class='bottom-card'>
+      <view class='zhuliqingkuang'>已有
+        <text style="color:#4284f7">{{hasHelp}}</text>个好友帮他助力</view>
+      <block wx:if="{{needHelp<=0 && hasHelp==total}}">
+        <view class='zhulijieshu'>很遗憾你来晚了，助力已结束</view>
+        <view class='zhulijieshu'>没关系，您可以点击下方按钮加入社群参与讨论</view>
+      </block>
+      <block wx:else>
+        <view class='zhuliqingkuang'>还差
+          <text style="color:#ff5252">{{needHelp}}</text>个好友就助力成功，快助力</view>
+      </block>
+      <view class='list'>
+        <block wx:for="{{imgList}}" wx:key="index">
+          <image class='head' src="{{item.head_img}}"></image>
+        </block>
+      </view>
+      <block wx:if="{{needHelp==0 && hasHelp==total}}">
+        <view class='group-list'>
+          <!-- <form bindsubmit="addGroupType" report-submit='true'> -->
+          <button class='btn' bindtap='backmenu' data-id="{{groupid}}" data-type="4" data-kind="zhuli">我也要加入社群</button>
+          <!-- </form> -->
+        </view>
+      </block>
+      <block wx:else>
+        <form bindsubmit="addGroupType" report-submit='true' data-id="{{groupid}}" data-type="1360">
+          <button hover-class='none' formType="submit" class='injoy-group'>
+            助Ta一臂之力
+          </button>
+        </form>
+        <!-- <form bindsubmit="addGroupType" report-submit='true' data-id="{{groupid}}" data-type="4"> -->
+        <button class='btn' bindtap='backmenu' data-kind="zhuli">我也要加入社群</button>
+        <!-- </form> -->
+      </block>
+    </view>
+  </view>
+  <view class='ruqunruler' wx:if="{{rulers}}">
+    <view class='ruler-title'>药友荟社群规则</view>
+    <scroll-view scroll-y class='ruler-content'>
+      <view class='ruler-item ruler-itemT'>在这里，这些行为将受到欢迎：</view>
+      <view class='ruler-item'> 1、分享信息；</view>
+      <view class='ruler-item'> 2、积极寻求行业帮助；</view>
+      <view class='ruler-item'> 3、对接商务信息。</view>
+      <view class='ruler-item ruler-itemT'>在这里，这些行为将不受欢迎：</view>
+      <view class='ruler-item'> 1、推送广告信息（包含产品推介）；</view>
+      <view class='ruler-item'> 2、推送带有二维码的图片；</view>
+      <view class='ruler-item'> 3、侮辱群内成员；</view>
+      <view class='ruler-item'> 4、邀请其他用户入群（若需进群，请从药友荟入群）；</view>
+      <view class='ruler-item'> 5、不符合法律规定的内容；</view>
+      <view class='ruler-item'> 6、修改群名 若有疑问，请添加群管理员（微信群第1个用户）。
+      </view>
+    </scroll-view>
+    <view class='know' bindtap='know'>我知道了</view>
+  </view>
+
+  <view class='ruqunruler' wx:if="{{zhulirulers}}">
+    <view class='ruler-title'>好友助力入群规则</view>
+    <scroll-view scroll-y class='ruler-content'>
+      <view class='ruler-item'>1、邀请好友助力，达到助力人数，即可入群；</view>
+      <view class='ruler-item'>2、每个用户仅可为一名好友助力一次。同一设备、微信号视为同一用户；</view>
+      <view class='ruler-item'>3、若发现用户存在虚假用户助力等违规行为，平台有权判定助力失败；</view>
+      <view class='ruler-item'>4、为保障用户权益，用户信息不会被公开泄漏；</view>
+      <view class='ruler-item'>5、药友荟可在法律法规允许范围内对本次活动规则解释并做适当修改。</view>
+
+    </scroll-view>
+    <view class='know' bindtap='know'>我知道了</view>
+  </view>
+
+
+</view>

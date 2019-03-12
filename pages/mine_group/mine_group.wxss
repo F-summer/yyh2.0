@@ -1,0 +1,166 @@
+/* pages/mine_group/mine_group.wxss */
+
+.container {
+  width: 750rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  width: 750rpx;
+  display: flex;
+  flex-direction: column;
+  margin-top: 32rpx;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32rpx;
+}
+
+.top .apply-group {
+  display: flex;
+  align-items: center;
+  font-size: 34rpx;
+  color: #333;
+  font-weight: 600;
+}
+
+.top .apply-group span {
+  font-size: 30rpx;
+  color: #999;
+  font-weight: 600;
+  margin-left: 20rpx;
+}
+
+.top .enjoy-group {
+  font-size: 24rpx;
+  display: flex;
+  align-items: center;
+  color: #3e81fb;
+}
+
+.top .enjoy-group image {
+  width: 17rpx;
+  height: 15rpx;
+  margin-left: 10rpx;
+}
+
+.group-list {
+  width: 750rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.group-item {
+  width: 686rpx;
+  height: 150rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.group-img {
+  width: 100rpx;
+  height: 100rpx;
+  margin-right: 24rpx;
+}
+
+.group-info {
+  /* height: 100rpx; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.group-name {
+  font-size: 30rpx;
+  color: #333;
+  font-weight: 550;
+  display: flex;
+}
+
+.group-des {
+  font-size: 24rpx;
+  color: #666;
+  margin-top: 16rpx;
+}
+
+
+
+.one {
+  color: #3e81fb;
+  font-size: 20rpx;
+  background-color: #ecf2ff;
+  padding: 4rpx 10rpx;
+  margin-left: 16rpx;
+}
+
+
+
+.zhezhao {
+  width: 750rpx;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  bottom: 0rpx;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.zhezhao-content {
+  width: 520rpx;
+  height: 445rpx;
+  border-radius: 32rpx;
+  background-color: #fff;
+}
+
+.zhezhao-title {
+  text-align: center;
+  font-size: 34rpx;
+  margin-top: 47rpx;
+  margin-bottom: 24rpx;
+  font-weight: 550;
+}
+
+.zhezhao-desc {
+  text-align: center;
+  font-size: 24rpx;
+  color: #999;
+  margin-bottom: 38rpx;
+}
+
+.zhezhao-item {
+  font-size: 28rpx;
+  color: #333;
+  margin-left: 50rpx;
+  display: flex;
+  align-items: center;
+  margin-bottom: 23rpx;
+}
+
+.zhezhao-item view {
+  width: 8rpx;
+  height: 8rpx;
+  border-radius: 4rpx;
+  background-color: #999;
+  margin-right: 10rpx;
+}
+
+.know {
+  width: 420rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  text-align: center;
+  background-color: #4284f7;
+  margin: 40rpx 50rpx;
+  font-size: 30rpx;
+  color: #fff;
+  border-radius: 16rpx;
+}

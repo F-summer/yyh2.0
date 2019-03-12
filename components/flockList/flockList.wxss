@@ -1,0 +1,364 @@
+/* components/flockList/flockList.wxss */
+
+.flocklist.active {
+  padding-top: 64rpx;
+  position: relative;
+}
+
+.select-cont {
+  background: #fff;
+  padding:0 32rpx;
+  position: absolute;
+  width: 100%;
+  padding-bottom: 0;
+  top: 0;
+}
+
+.select-cont .select-info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding-bottom: 17rpx;
+}
+
+.select-cont .select-info .select-item {
+  display: flex;
+  flex-direction:row;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.select-cont .select-info .select-item.active .text {
+  font-size: 40rpx;
+  color: #4284f7;
+  font-weight: bold;
+  position: relative;
+}
+/* .select-cont .select-info .select-item.active .text::before{
+  position: absolute;
+  content: "";
+  width: 12rpx;
+	height: 8rpx;
+	background-color: #333333;
+	border-radius: 10rpx;
+  left: 50%;
+  margin-left: -6rpx;
+  bottom: 0rpx;
+} */
+.select-cont .select-info .select-item .text {
+  font-size: 30rpx;
+  color: #333;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
+
+.select-cont .select-info .select-item .icon {
+  width: 12rpx;
+  height: 6rpx;
+  vertical-align: middle;
+}
+
+.type-cont {
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.type-cont .flexcont {
+  flex: 1;
+}
+
+.type-cont .type-item {
+  display: inline-block;
+  background-color: #f4f4f4;
+  border-radius: 28rpx;
+  height: 56rpx;
+  width: 153rpx;
+  font-size: 24rpx;
+  color: #333;
+  line-height: 56rpx;
+  margin: auto;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.type-cont .type-item.active {
+  background-color: #4284f7;
+  color: #fff;
+}
+
+.flock-info {
+  padding: 0 32rpx;
+  background: #fff;
+}
+
+.flock-info .flock-item {
+  height: 150rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  border-bottom: 1rpx solid #ebebeb;
+}
+
+.flock-info .flock-item .flock-img {
+  width: 100rpx;
+  height: 100rpx;
+  background-color: #f4f4f4;
+  border-radius: 8rpx;
+  margin-right: 25rpx;
+}
+
+.flock-info .flock-item .right {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+}
+
+.flock-info .flock-item .right .text-cont {
+  flex: 1;
+}
+
+.flock-info .flock-item .right .text-cont .name {
+  font-size: 30rpx;
+  color: #333;
+  margin-bottom: 16rpx;
+}
+
+.flock-info .flock-item .right .text-cont .text {
+  font-size: 24rpx;
+  color: #999;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 380rpx;
+  display: block;
+}
+
+.flock-info .flock-item .right .add-flock-btn {
+  padding: 0 32rpx;
+  height: 56rpx;
+  background-color: #4284f7;
+  border-radius: 28rpx;
+  font-size: 24rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 56rpx;
+}
+.flock-info .flock-item .right .add-flock-btn::after{
+  border:none;
+}
+.select-cont.active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  padding: 22rpx 32rpx;
+  padding-bottom: 0;
+  z-index: 9999;
+}
+
+.alert-cont {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999999;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 56rpx 75rpx;
+}
+
+.alert-cont .show-img {
+  width: 100%;
+  height: 1094rpx;
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 68rpx 94rpx;
+  position: relative;
+}
+
+.alert-cont .show-img .red-head {
+  position: absolute;
+  top: 40rpx;
+  width: 410rpx;
+  height: 51rpx;
+}
+
+.alert-cont .show-img .img {
+  width: 100%;
+  height: 810rpx;
+}
+
+.go-flock-btn {
+  position: relative;
+  width: 370rpx;
+  height: 88rpx;
+  background-color: #4284f7;
+  border-radius: 44rpx;
+  margin: auto;
+  overflow: hidden;
+  margin-top: 32rpx;
+  margin-bottom: 16rpx;
+}
+
+.go-flock-btn .top-cont {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  line-height: 88rpx;
+  font-size: 30rpx;
+  color: #fff;
+}
+
+.go-flock-btn .top-cont .icon {
+  width: 41rpx;
+  height: 32rpx;
+  vertical-align: middle;
+  margin-right: 16rpx;
+}
+
+.go-flock-btn .top-cont .txt {
+  vertical-align: middle;
+}
+
+.go-flock-btn .details_button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+}
+
+.alert-cont .show-img .text {
+  text-align: center;
+  display: block;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.search-num {
+  padding: 24rpx 32rpx;
+  font-size: 24rpx;
+  color: #333;
+}
+
+.search-num .num {
+  color: #ff5252;
+}
+
+.nomsg {
+  width: 364rpx;
+  height: 230rpx;
+  display: block;
+  margin: 32rpx auto;
+}
+
+.notext {
+  display: block;
+  text-align: center;
+  color: #999;
+  font-size: 30rpx;
+}
+
+.btn-flock {
+  width: 220rpx;
+  height: 56rpx;
+  background-color: #4284f7;
+  border-radius: 28rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 56rpx;
+  display: block;
+  margin: 32rpx auto;
+  font-size: 24rpx;
+}
+
+.textcont {
+  text-align: center;
+  font-size: 24rpx;
+  color: #999;
+  background: #fff;
+  height: 72rpx;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.tstext {
+  vertical-align: middle;
+  line-height: 64rpx;
+}
+
+.moreBtn {
+  width: 18rpx;
+  height: 16rpx;
+  margin-left: 10rpx;
+}
+
+.navText {
+  width: 460rpx;
+  height: 64rpx;
+  background-color: #ebebeb;
+  border-radius: 32rpx;
+  margin: auto;
+  font-size: 24rpx;
+  color: #999;
+  text-align: center;
+  margin-top: 16rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.czbtn {
+  height: 48rpx;
+  text-align: right;
+}
+
+.czbtn .icon {
+  width: 24rpx;
+  height: 24rpx;
+  display: inline-block;
+}
+
+.showNoMsg {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+showNoMsgFun {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.over_hide {
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 200rpx;
+}

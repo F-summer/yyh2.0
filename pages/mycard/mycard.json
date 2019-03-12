@@ -1,0 +1,9 @@
+{
+  "navigationBarBackgroundColor": "#0f59da",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "我的名片",
+  "backgroundTextStyle": "light",
+  "usingComponents": {
+    "login": "/components/login/login"
+  }
+}

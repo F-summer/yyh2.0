@@ -1,0 +1,13 @@
+<!--components/city/city.wxml-->
+<view class='container' wx:if="{{cityShow}}" catchtouchmove='true' bindtap='close' >
+  <view class="content {{showC?'content-show':''}}"  bindtap='closeAll' >
+    <scroll-view scroll-y="true" style="height:{{cityHeight}}px">
+    <view wx:for="{{cityList}}" bindtap='active' wx:key="index">
+      <view class='city-item'  data-id="{{item.id}}" data-name='{{item.name}}'>
+        {{item.name}}
+        <image src="{{indexCho==item.id?'/components/city/images/choice.png':'/components/city/images/white.jpg'}}"> </image>
+      </view>
+    </view>
+    </scroll-view>
+  </view>
+</view>

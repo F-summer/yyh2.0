@@ -1,0 +1,43 @@
+/* components/searchHeat/searchHeat.wxss */
+.heartcont{
+  background: #ffffff;
+  position: fixed;
+  top: 120rpx;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 20rpx 32rpx;
+}
+.heartcont .tit{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40rpx;
+}
+.heartcont .tit .text{
+  font-size: 24rpx;
+	color: #999999;
+}
+.heartcont .tit .none{
+  font-size: 24rpx;
+	color: #ff5252;
+}
+.heartcont .memo-info{
+  margin-bottom: 24rpx;
+}
+.heartcont .memo-info .memo-item{
+	background-color: #f4f4f4;
+	border-radius: 32rpx;
+  display: inline-block;
+  font-size: 30rpx;
+	color: #333333;
+  height: 64rpx;
+  padding: 0 32rpx;
+  line-height: 64rpx;
+  margin-right: 24rpx;
+  margin-bottom: 24rpx;
+}
+.heartcont .memo-info .memo-item::after{
+  border: none;
+}

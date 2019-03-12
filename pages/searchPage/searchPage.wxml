@@ -1,0 +1,28 @@
+<!--pages/searchPage/searchPage.wxml-->
+<import src="/pages/template/template.wxml" />
+<template wx:if="{{onlineTier}}" is="{{onlineData.line_type == 1 ? 'onLineTierText' : 'onLineTierPic'}}" data="{{onlineData}}">
+</template>
+<view class='indexAther'>
+  <view class='sea-add-cont'>
+    <view class='search'>
+      <image class='search-icon' src='/images/icon_search.png'></image>
+      <input bindinput='oninputFun' value="{{getAtherVal}}" class='search-inp' placeholder='{{searchVal}}'></input>
+      <view class='clear-cont' bindtap='clearFun'>
+        <image wx:if="{{showClearBtn}}" class='clear' src='/images/clear.png'></image>
+      </view>
+    </view>
+    <form bindsubmit='onSearch' data-value="{{getAtherVal}}" data-id="0" data-name="{{item.name}}" report-submit="true" data-type="1349">
+      <button class='cancer-btn' formType="submit">
+        搜索
+      </button>
+    </form>
+  </view>
+</view>
+<block wx:if="{{!haveResult}}">
+  <searchHeat bind:showclear="showClearFun" getAtherVal="{{getAtherVal}}" bind:myevent="changSearchVal"></searchHeat>
+</block>
+<block wx:if="{{haveResult}}">
+  <flockList headTop="headTop" bind:myevent="changeText" getAtherVal="{{getAtherVal}}" id="flockList" pageIndex="{{pageIndex}}" bind:addGroup="addGroup"></flockList>
+</block>
+<!-- 加群展示 -->
+<g-group id="groupDes" groupShow="{{groupShow}}" groupid="{{gid}}"></g-group>

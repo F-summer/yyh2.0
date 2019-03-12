@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "帮助群助力",
+    "usingComponents": {
+        "g-scrollInfo": "/components/scrollInfo/scrollInfo"
+    }
+}

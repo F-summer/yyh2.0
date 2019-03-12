@@ -1,0 +1,37 @@
+.container {
+  /* background-color: #ccc; */
+  height: 228rpx;
+  overflow: auto;
+  width: 640rpx;
+}
+.user-item {
+  display: flex;
+  height: 60rpx;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user {
+  display: flex;
+  height: 80rpx;
+  align-items: center;
+}
+
+.touxiang {
+  width: 54rpx;
+  height: 54rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+
+.username {
+  font-size: 28rpx;
+  font-family: "PingFangSC";
+  color: rgb(51, 51, 51);
+}
+
+.assistant {
+  font-size: 22rpx;
+  font-family: "PingFangSC";
+  color: #999;
+}

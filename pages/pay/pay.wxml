@@ -1,0 +1,2 @@
+<!--pages/pay/pay.wxml-->
+<view class='paybtn' bindtap='payFun'>支付</view>

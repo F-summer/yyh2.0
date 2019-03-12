@@ -1,0 +1,22 @@
+/* pages/index/index.wxss */
+page{
+  background-color: #f4f4f4;
+  padding-bottom: 32rpx;
+}
+.loading{
+  width: 180rpx;
+  height: 180rpx;
+  position: fixed;
+  top: 50%;
+  margin-top: -90rpx;
+  left: 50%;
+  margin-left: -90rpx;
+}
+.jianqun{
+  width: 120rpx;
+  height: 142rpx;
+  position: fixed;
+  left: 32rpx;
+  bottom: 64rpx;
+  z-index: 9999;
+}

@@ -1,0 +1,59 @@
+<!--pages/mine_group/mine_group.wxml-->
+<view class='container'>
+  <view class='content'>
+    <view class='top'>
+      <view class='apply-group'>申请入群
+        <span>({{applyNum}})</span>
+      </view>
+      <view class='enjoy-group' bindtap='show'>入群小窍门
+        <image src='/images/jiqiao.png'></image>
+      </view>
+    </view>
+    <view class='group-list'>
+      <block wx:for="{{applyArr}}" wx:key="index">
+        <view class='group-item'>
+          <image class='group-img' src='{{item.head_img}}'></image>
+          <view class='group-info'>
+            <view class='group-name'>{{item.name}}
+              <view class='one'>{{item.room_count}}名群成员</view>
+            </view>
+            <view class='group-des'>{{item.intro}}</view>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class='top'>
+      <view class='apply-group'>我的群组
+        <span>({{groupNum}})</span>
+      </view>
+
+    </view>
+    <view class='group-list'>
+      <block wx:for="{{groupArr}}" wx:key="index">
+        <view class='group-item'>
+          <image class='group-img' src='{{item.head_img}}'></image>
+          <view class='group-info'>
+            <view class='group-name'>{{item.name}}
+              <view class='one'>{{item.room_count}}名群成员</view>
+            </view>
+            <view class='group-des'>{{item.intro}}</view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <view class='zhezhao' wx:if="{{zhezhaoShow}}" catchtouchmove='true'>
+    <view class='zhezhao-content'>
+      <view class='zhezhao-title'>入群小窍门</view>
+      <view class='zhezhao-desc'>加速入群，您可以尝试以下途径：</view>
+      <view class='zhezhao-item'>
+        <view></view> 分享给好友邀请助力</view>
+      <view class='zhezhao-item'>
+        <view></view> 分享到微信群邀请助力</view>
+      <view class='zhezhao-item'>
+        <view></view> 生成海报分享到朋友圈邀请助力</view>
+      <view class='know' bindtap='close'>我知道了</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,13 @@
+<!--components/theme/theme.wxml-->
+<view class="container" catchtouchmove='true' wx:if="{{themeShow}}">
+  <view class='content'>
+    <scroll-view class='content-scroll' scroll-y="true">
+      <view wx:for="{{list}}" wx:key="index" wx:for-index='index' bindtap='choice'>
+        <view class="list-item {{indexCho==index?'active':'normal'}}" data-ids="{{index}}" data-id='{{item.id}}' data-name="{{item.name}}">
+          {{item.name}}
+        </view>
+      </view>
+    </scroll-view>
+    <view class='close' bindtap='close'>取消</view>
+  </view>
+</view>

@@ -1,0 +1,75 @@
+/* pages/login/login.wxss */
+.login-cont{
+  padding-top: 0;
+}
+.img{
+  display: block;
+  width: 163rpx;
+  height: 200rpx;
+  margin:84rpx auto;
+  margin-bottom: 104rpx;
+}
+.list{
+  padding: 0 40rpx;
+}
+.list .text{
+  font-size: 34rpx;
+	color: #333333;
+  display: block;
+  font-weight: bold;
+}
+.list .msg{
+  font-size: 28rpx;
+	line-height: 40rpx;
+	color: #999999;
+  margin: 32rpx 0;
+}
+.list .item-cont{
+  margin-top: 64rpx;
+}
+.list .item-cont .item{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 50rpx;
+}
+.list .item-cont .item .yes{
+  width: 48rpx;
+  height: 48rpx;
+  margin-right: 18rpx;
+}
+.list .item-cont .item .txt-con .tit{
+  font-size: 34rpx;
+	color: #333333;
+  display: block;
+}
+.list .item-cont .item .txt-con .txt{
+  font-size: 28rpx;
+	line-height: 40rpx;
+	color: #999999;
+  margin-top: 20rpx;
+}
+.btn{
+  margin: 65rpx auto;
+  margin-bottom: 0;
+  width: 692rpx;
+  background-color: #18ac1a;
+	border-radius: 16rpx;
+  height: 88rpx;
+  font-size: 30rpx;
+	line-height: 88rpx;
+	color: #ffffff;
+}
+.btn::after{
+  border: none;
+}
+.more{
+  padding-top: 25rpx;
+  text-align: center;
+}
+.more .text{
+  font-size: 24rpx;
+  color: #999;
+  display: block;
+  margin: auto;
+  margin-bottom: 8rpx;
+}
